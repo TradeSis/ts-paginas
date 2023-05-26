@@ -1304,10 +1304,13 @@ section {
 }
 
 .onfocus .content {
-  background: linear-gradient(rgba(var(--color-secondary-rgb), 0.5), rgba(var(--color-secondary-rgb), 0.8)), url("../img/onfocus-content-bg.jpg") center center;
+/*   background: linear-gradient(rgba(var(--color-secondary-rgb), 0.5), rgba(var(--color-secondary-rgb), 0.8)), url("../img/onfocus-content-bg.jpg") center center; */
   background-size: cover;
-  color: rgba(var(--color-white-rgb), 0.8);
-  padding: 40px;
+  color: #333333;
+  padding: 60px;
+  font-size: 30px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 @media (min-width: 768px) {
@@ -1449,6 +1452,38 @@ section {
     transform: scale(1, 1);
     opacity: 0;
   }
+}
+
+/*--------------------------------------------------------------
+# Values
+--------------------------------------------------------------*/
+.values .box {
+  padding: 30px;
+  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.values .box img {
+  padding: 30px 50px;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.values .box h3 {
+  font-size: 24px;
+  color: #012970;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.values .box:hover {
+  box-shadow: 0px 0 10px rgba(1, 42, 112, 0.425);
+}
+
+.values .box:hover img {
+  transform: scale(1);
 }
 
 /*--------------------------------------------------------------
@@ -3165,4 +3200,179 @@ section {
 .footer .footer-legal .social-links a:hover {
   background: var(--color-primary);
   text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+#  Personalizado para TradeSis
+--------------------------------------------------------------*/
+
+.footer-newsletter strong a{
+  color: #fff;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  background: #212124;
+
+ /*  min-height: 100vh; */
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 90px;
+
+  background: #d1d0d7;
+}
+
+header .logo{
+  width: 80%;
+}
+
+header .container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 2em;
+}
+
+header .container-header nav {
+  display: flex;
+  list-style-type: none;
+}
+
+header .container-header h2 {
+  color: #fff;
+}
+
+header .container-header nav li a {
+  color: #fff;
+  font-weight: 400;
+  color: #999;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+header .container-header nav li a.active {
+  color: #fff;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+
+header .container-header .search-container {
+  display: flex;
+}
+
+
+header .container-header .mobile-menu {
+  display: none;
+}
+
+header .container-header .mobile-menu samp{
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  color: red;
+  font-size: 35px;
+}
+
+@media (max-width: 768px) {
+  
+  header .container-header nav {
+    display: none;
+  }
+  
+   header .container-header .mobile-menu {
+    display: block;
+  }
+
+  header .logo{
+    width: 70%;
+  }
+
+  #faixaDeCima {
+    display: none;
+  }
+  #faixaDeCima a{
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  
+   header .container-header .mobile-menu {
+    display: none;
+  }
+  .mobile-conteudo .container-flex{
+  width: 50%;
+}
+}
+
+#faixaDeCima{
+    background-color: #fff;
+    height: 42px;
+    text-align: right;
+  }
+  #faixaDeCima a{
+    float: right;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    padding-right: 30px;
+    margin-top: 7px;
+    font-size: 15px;
+  }
+
+
+.mobile-conteudo{
+  display: none;
+
+}
+
+.mobile-conteudo span{
+  cursor: pointer;
+  font-size: 20px;
+  background-color: red;
+}
+.mobile-menu span{
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 600;
+  color: #070944;
+}
+
+.mobile-conteudo.mostra{
+  display: block;
+  align-items: center;
+  text-align: center;
+  height: 30vh;
+  padding-top: 30px;
+}
+.mobile-conteudo.mostra a{
+  position: relative;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  color: #333333;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight:600;
+   cursor: pointer;
+
+}
+
+.root .container-header a img{
+  width: 300;
+  height: 60;
 }

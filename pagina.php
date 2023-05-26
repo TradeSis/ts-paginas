@@ -15,6 +15,7 @@ include_once(ROOT . '/sistema/database/perfil.php');
 include_once(ROOT . '/sistema/database/secaoBanner.php');
 include_once(ROOT . '/sistema/database/posts.php');
 include_once(ROOT . '/sistema/database/produtos.php');
+include_once(ROOT . '/sistema/database/servicos.php');
 
 $tema = buscatema();
 $perfil = buscaPerfil();
