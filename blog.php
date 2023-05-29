@@ -1,6 +1,7 @@
 <?php 
 
 $secoesPaginas= buscaSecaoPagina($paginaDados['idPagina']);
+$recentes = buscaPostsRecentes();
 
 // Secoes antes da pagina
 $ordem = 0;
@@ -15,8 +16,15 @@ foreach ($secoesPaginas as $secaoPagina){
 
 }
 
-$posts = buscaPosts();
+if (isset($_GET['titulo'])) {
+  
+  $titulo = $_GET['titulo'];
+} else {
+  $titulo = null;
+}
 
+$posts = buscaPosts(null, $titulo);
+//echo json_encode($posts);
 
 ?>
 
@@ -108,11 +116,13 @@ $posts = buscaPosts();
             <div class="sidebar">
 
               <div class="sidebar-item search-form">
-                <h3 class="sidebar-title">Search</h3>
-                <form action="" class="mt-3">
-                  <input type="text">
+                <h3 class="sidebar-title">Pesquisar titulo do Post</h3>
+                <form action="" method="get" class="mt-3">
+                  <input type="text" name="titulo">
                   <button type="submit"><i class="bi bi-search"></i></button>
                 </form>
+               
+                <a href="blog" role="button" class="btn btn-sm btn-primary mt-2"><i class="bi bi-x-circle-fill"></i>&#32;Limpar</a>
               </div><!-- End sidebar search formn-->
 
               <div class="sidebar-item categories">
@@ -128,49 +138,19 @@ $posts = buscaPosts();
               </div><!-- End sidebar categories-->
 
               <div class="sidebar-item recent-posts">
-                <h3 class="sidebar-title">Recent Posts</h3>
+                <h3 class="sidebar-title">Posts Recentes</h3>
 
                 <div class="mt-3">
 
+                <?php foreach($recentes as $recente){ ?>
                   <div class="post-item mt-3">
                     <img src="assets/img/blog/blog-recent-1.jpg" alt="" class="flex-shrink-0">
                     <div>
-                      <h4><a href="blog-post.html">Nihil blanditiis at in nihil autem</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
+                      <h4><a href="blog-post.html"><?php echo $recente['titulo'] ?></a></h4>
+                      <time datetime="2020-01-01"><?php echo $recente['data'] ?></time>
                     </div>
-                  </div><!-- End recent post item-->
-
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-2.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Quidem autem et impedit</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
-
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-3.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
-
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-4.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Laborum corporis quo dara net para</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
-
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-5.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
+                  </div>
+                <?php } ?>
 
                 </div>
 
