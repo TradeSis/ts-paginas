@@ -24,11 +24,10 @@ $perfil = buscaPerfil();
 ?>
 <body>
 
+<link href="/ts/paginas/css/main.css" rel="stylesheet"> <!--Estilo da pg principal -->
+<script src="/ts/paginas/js/main.js"></script>
 
-<link href="paginas/css/main.css" rel="stylesheet"> <!--Estilo da pg principal -->
-<script src="paginas/js/main.js"></script>
-
-<link href="paginas/css/<?php echo $tema["css"]; ?>" rel="stylesheet">
+<link href="/ts/paginas/css/<?php echo $tema["css"]; ?>" rel="stylesheet">
 
 
 <?php
