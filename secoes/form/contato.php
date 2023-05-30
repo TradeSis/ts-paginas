@@ -1,6 +1,11 @@
+<?php
+$parametro = json_decode($secaoPagina["parametros"],true);
+
+?>
+
 <section>
   <div class="container-fluid" style="height:60px; background-color: #E2EBEB">
-      <h4>Fale Conosco</h4>
+      <h4>"><?php echo $parametro['titulo'] ?></h4>
   </div>
   <div class="row mt-3">
     <div class="col-5 mb-4 p-4 ml-4">
@@ -38,7 +43,7 @@
          
         </form>
         <center>
-          <button type="submit" class="btn btn-primary mb-4 mt-4">Enviar</button>
+          <button type="submit" class="btn btn-primary mb-4 mt-4">"><?php echo $parametro['textoBotao'] ?></button>
           </center>
     </div>
   </div>
