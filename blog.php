@@ -1,31 +1,41 @@
-<?php 
+<?php
 
-$secoesPaginas= buscaSecaoPagina($paginaDados['idPagina']);
+$secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
+$recentes = buscaPostsRecentes();
 
 // Secoes antes da pagina
 $ordem = 0;
-foreach ($secoesPaginas as $secaoPagina){
-      
-   if($secaoPagina["arquivoFonte"]=="pagina") {
-      break;
-    }
+foreach ($secoesPaginas as $secaoPagina) {
 
-    include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
-    $ordem = $secaoPagina["ordem"];
+  if ($secaoPagina["arquivoFonte"] == "pagina") {
+    break;
+  }
 
+  include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+  $ordem = $secaoPagina["ordem"];
 }
 
-$posts = buscaPosts();
+if (isset($_GET['titulo'])) {
+  $titulo = $_GET['titulo'];
+} else {
+  $titulo = null;
+}
 
+if (isset($_GET['categoria'])) {
+  $categoria = $_GET['categoria'];
+} else {
+  $categoria = null;
+}
+$posts = buscaPosts(null, $titulo, $categoria);
+//echo json_encode(URLROOT);
 
 ?>
 
 <body>
 
-  
+
 
   <main id="main">
-
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
       <div class="container">
@@ -50,176 +60,132 @@ $posts = buscaPosts();
           <div class="col-lg-8">
 
             <div class="row gy-4 posts-list">
+              <?php foreach ($posts as $post) { ?>
 
-            <?php foreach($posts as $post){ ?>
+                <div class="col-lg-6 mt-4">
+                  <article class="d-flex flex-column">
+                    <div class="post-img">
+                      <img src="img/imgPosts/<?php echo $post["imgDestaque"] ?>" alt="" class="img-fluid">
+                    </div>
 
-              <div class="col-lg-6 mt-4">
-                <article class="d-flex flex-column">
+                    <h2 class="title">
+                      <a href="blog-details.html"><?php echo $post["titulo"] ?></a>
+                    </h2>
 
-                  <div class="post-img">
-                    <img src="../img/imgPosts/<?php echo $post["imgDestaque"] ?>" alt="" class="img-fluid">
-                  </div>
+                    <div class="meta-top">
+                      <ul>
+                        <div class="row">
+                          <div class="col">
+                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href=""><?php echo $post["autor"] ?></a></li>
+                            <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href=""><?php echo $post["comentarios"] ?></a></li>
+                          </div>
+                          <div class="col">
+                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href=""><time><?php echo date('d/m/Y', strtotime($post['data'])) ?></time></a></li>
+                            <li class="d-flex align-items-center"><i class="bi bi-tag"></i> <a href=""><?php echo $post["categoria"] ?></a></li>
+                          </div>
+                        </div>
+                      </ul>
+                    </div>
 
-                  <h2 class="title">
-                    <a href="blog-details.html"><?php echo $post["titulo"] ?></a>
-                  </h2>
+                    <div class="content">
+                      <p><?php echo $post["textoIntro"] ?>.</p>
+                    </div>
 
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html"><?php echo $post["autor"] ?></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01"><?php echo $post["data"] ?></time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html"><?php echo $post["comentarios"] ?></a></li>
-                    </ul>
-                  </div>
+                    <div class="read-more mt-auto align-self-end">
+                      <a href="blog/<?php echo $post['slug'] ?>">Ler mais</a>
+                    </div>
+                  </article>
+                </div>
 
-                  <div class="content">
-                    <p>
-                    <?php echo $post["textoIntro"] ?>.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog/<?php echo $post['slug'] ?>">Ler mais</a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-            <?php } ?>
-              
-
-              
-              
-
-            </div><!-- End blog posts list -->
+              <?php } ?>
+            </div>
 
             <div class="blog-pagination">
               <ul class="justify-content-center">
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
                 <li><a href="#">3</a></li>
               </ul>
-            </div><!-- End blog pagination -->
+            </div>
 
           </div>
 
           <div class="col-lg-4">
-
             <div class="sidebar">
 
               <div class="sidebar-item search-form">
-                <h3 class="sidebar-title">Search</h3>
-                <form action="" class="mt-3">
-                  <input type="text">
+                <h3 class="sidebar-title">Pesquisar titulo do Post</h3>
+                <form action="" method="get" class="mt-3">
+                  <input type="text" name="titulo">
                   <button type="submit"><i class="bi bi-search"></i></button>
                 </form>
-              </div><!-- End sidebar search formn-->
+              </div>
 
               <div class="sidebar-item categories">
-                <h3 class="sidebar-title">Categories</h3>
-                <ul class="mt-3">
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
-                </ul>
-              </div><!-- End sidebar categories-->
+                <h3 class="sidebar-title">Categorias</h3>
+                <select name="categoria" id="categoria">
+                  <option onclick="searchData()">Categorias</option>
+                  <option value="tecnologia">Tecnologia</option>
+                  <option value="informacao">Informacão</option>
+                  <option value="novidade">Novidade</option>
+                </select>
+              </div>
+
+              <div style="text-align: right;">
+                <a href="blog" role="button" class="btn btn-sm mt-2" style="background-color: #3EB5CA;color: #fff">Limpar</a>
+              </div>
 
               <div class="sidebar-item recent-posts">
-                <h3 class="sidebar-title">Recent Posts</h3>
-
+                <h3 class="sidebar-title">Posts Recentes</h3>
                 <div class="mt-3">
-
-                  <div class="post-item mt-3">
-                    <img src="assets/img/blog/blog-recent-1.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Nihil blanditiis at in nihil autem</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
+                  <?php foreach ($recentes as $recente) { ?>
+                    <div class="post-item mt-3">
+                      <img src="img/imgPosts/<?php echo $recente['imgDestaque'] ?>" alt="" class="flex-shrink-0" width="40px" height="60px">
+                      <div>
+                        <h4><a href="blog-post.html"><?php echo $recente['titulo'] ?></a></h4>
+                        <time><?php echo date('d/m/Y', strtotime($recente['data'])) ?></time>
+                      </div>
                     </div>
-                  </div><!-- End recent post item-->
-
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-2.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Quidem autem et impedit</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
-
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-3.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
-
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-4.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Laborum corporis quo dara net para</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
-
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-5.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
-
+                  <?php } ?>
                 </div>
+              </div>
 
-              </div><!-- End sidebar recent posts-->
-
-              <div class="sidebar-item tags">
-                <h3 class="sidebar-title">Tags</h3>
-                <ul class="mt-3">
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
-                </ul>
-              </div><!-- End sidebar tags-->
-
-            </div><!-- End Blog Sidebar -->
-
+            </div>
           </div>
 
         </div>
 
       </div>
-    </section><!-- End Blog Section -->
-
-  </main><!-- End #main -->
-
+    </section>
+  </main>
 
 
+  <script>
+    var select = document.getElementById('categoria')
+
+    select.addEventListener('change', function() {
+      /*  console.log(select.value) */
+      window.location = 'blog?categoria=' + select.value;
+    })
+
+    function searchData() {
+      window.location = 'blog';
+    }
+  </script>
 </body>
 
 <?php
 // Secoes depois da pagina
-foreach ($secoesPaginas as $secaoPagina){
-    
-  if($secaoPagina["ordem"]<=$ordem) {
+foreach ($secoesPaginas as $secaoPagina) {
+
+  if ($secaoPagina["ordem"] <= $ordem) {
     continue;
   }
- 
-    if($secaoPagina["arquivoFonte"]=="pagina") {
-      continue;
-    }
 
-    include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+  if ($secaoPagina["arquivoFonte"] == "pagina") {
+    continue;
   }
+
+  include 'secoes/' . $secaoPagina["tipoSecao"] . "/" . $secaoPagina["arquivoFonte"];
+}
 ?>

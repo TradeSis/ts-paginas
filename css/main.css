@@ -3376,3 +3376,11 @@ header .container-header .mobile-menu samp{
   width: 300;
   height: 60;
 }
+
+.blog .sidebar .categories select {
+  margin-top: 5px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #4a4a4b98;
+}

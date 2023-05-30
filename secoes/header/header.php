@@ -8,7 +8,7 @@
        
        
         
-          <img src="img/imgPerfil/<?php echo $perfil["logo"] ?>" alt="" width="300" height="120">
+          <img src="<?php echo URLROOT;?>/img/imgPerfil/<?php echo $perfil["logo"] ?>" alt="" width="300" height="120">
              
         
       </a>
