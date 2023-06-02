@@ -1,16 +1,17 @@
 <?php
 
 $servicos = buscaServicosCards();
-
+$parametro = json_decode($secaoPagina["parametros"],true);
 ?>
+
 
 <section id="servicos" class="values">
 
   <div class="container" data-aos="fade-up">
 
     <div class="section-header">
-      <h2>Nossos Serviços</h2>
-      <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p>
+      <h2><?php echo $parametro['titulo'] ?></h2>
+      <p><?php echo $parametro['descricao'] ?></p>
     </div>
 
     <div class="row">
@@ -22,7 +23,7 @@ $servicos = buscaServicosCards();
             <h3><?php echo $servico['nomeServico'] ?></h3>
             <p><?php echo $servico['descricaoServico'] ?></p>
             <div class="read-more mt-auto align-self-end">
-              <a href="<?php echo $servico['linkServico'] ?>">Saiba mais</a>
+              <a href="<?php echo $servico['linkServico'] ?>"><?php echo $parametro['textoBotao'] ?></a>
             </div>
           </div>
         </div>
