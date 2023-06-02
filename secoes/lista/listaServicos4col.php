@@ -1,13 +1,12 @@
 <?php
 
 $servicos = buscaServicos();
-
 // busca parametros da secao
 $parametro = json_decode($secaoPagina["parametros"],true);
 
 /*
 Exemplo
-$json = '{"titulo":"estes sao nossos servicos","Descritivo":"Descritivo"}';
+$json = '{"titulo":"estes sao nossos servicos","pastaImg":"/brand/imgServicos/","descritivo":"esee é o Descritivo","textoBotao":"Saiba mais."}';
 
 */
 
@@ -25,7 +24,7 @@ $json = '{"titulo":"estes sao nossos servicos","Descritivo":"Descritivo"}';
     <div class="row">
 
       <?php foreach ($servicos as $servico) { ?>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
           <div class="box">
             <img src="<?php echo URLROOT. $parametro['pastaImg'] . $servico['imgServico'] ?>" class="img-fluid" alt="">
             <h3><?php echo $servico['nomeServico'] ?></h3>
@@ -39,5 +38,6 @@ $json = '{"titulo":"estes sao nossos servicos","Descritivo":"Descritivo"}';
     </div>
 
   </div>
+  
 
 </section>

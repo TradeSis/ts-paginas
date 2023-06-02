@@ -1,17 +1,9 @@
 <?php
 
-$servicos = buscaServicos();
-
-// busca parametros da secao
+$servicos = buscaServicosCards();
 $parametro = json_decode($secaoPagina["parametros"],true);
-
-/*
-Exemplo
-$json = '{"titulo":"estes sao nossos servicos","Descritivo":"Descritivo"}';
-
-*/
-
 ?>
+
 
 <section id="servicos" class="values">
 
@@ -19,20 +11,21 @@ $json = '{"titulo":"estes sao nossos servicos","Descritivo":"Descritivo"}';
 
     <div class="section-header">
       <h2><?php echo $parametro['titulo'] ?></h2>
-      <p><?php echo $parametro['descritivo'] ?></p>
+      <p><?php echo $parametro['descricao'] ?></p>
     </div>
 
     <div class="row">
 
       <?php foreach ($servicos as $servico) { ?>
         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="box">
-            <img src="<?php echo URLROOT. $parametro['pastaImg'] . $servico['imgServico'] ?>" class="img-fluid" alt="">
-            <h3><?php echo $servico['nomeServico'] ?></h3>
+          <div class="box" style="border:solid 1px #566370; border-radius: 25px; background-color:<?php echo $parametro['corCard'] ?>">
+            <img  src="<?php echo URLROOT ?>/img/brand/<?php echo $servico['imgServico'] ?>" class="img-fluid" alt="">
+            
+            <a href="<?php echo $servico['linkServico'] ?>"><h3><?php echo $servico['nomeServico'] ?></h3></a>
             <p><?php echo $servico['descricaoServico'] ?></p>
-            <div class="read-more mt-auto align-self-end">
+            <!-- <div class="read-more mt-auto align-self-end">
               <a href="<?php echo $servico['linkServico'] ?>"><?php echo $parametro['textoBotao'] ?></a>
-            </div>
+            </div> -->
           </div>
         </div>
       <?php } ?>

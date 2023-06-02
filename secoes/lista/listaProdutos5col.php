@@ -1,17 +1,16 @@
 <?php
 
 $produtos = buscaProdutos();
-
+$parametro = json_decode($secaoPagina["parametros"],true);
 ?>
 
-
 <section style="margin-left: 400px;">
-  <h4>Card Produtos</h4>
+  <h4><?php echo $parametro['titulo'] ?></h4>
   <div class="container-flex text-center" style="width:1000px; height: 420px ;display: flex; margin-left: 20px">
     <div class="row">
       <?php foreach ($produtos as $produto) { ?>
         <div class="card" style="width: 18rem; ">
-          <img class="card-img-top" src="admin/imgProdutos/<?php echo $produto["fotoProduto"] ?>" alt="Card image cap">
+          <img class="card-img-top" src="<?php echo URLROOT. $parametro['pastaImg'] . $produtos['fotoProduto'] ?>" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">
               <?php echo $produto["nomeProduto"] ?>
