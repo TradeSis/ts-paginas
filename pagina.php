@@ -24,8 +24,8 @@ $perfil = buscaPerfil();
 ?>
 <body>
 
-<link href="/ts/paginas/css/main.css" rel="stylesheet"> <!--Estilo da pg principal -->
-<script src="/ts/paginas/js/main.js"></script>
+<link href="<?php echo URLROOT ?>/paginas/css/main.css" rel="stylesheet"> <!--Estilo da pg principal -->
+<script src="<?php echo URLROOT ?>/paginas/js/main.js"></script>
 
 
 
@@ -79,7 +79,7 @@ foreach ($secoesPaginas as $secaoPagina) {
 
 
 ?>
-<link href="/ts/paginas/css/<?php echo $paginaDados["css"]; ?>" rel="stylesheet">
+<link href="<?php echo URLROOT ?>/paginas/css/<?php echo $paginaDados["css"]; ?>" rel="stylesheet">
 
 
 
