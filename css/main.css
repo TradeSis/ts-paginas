@@ -3043,7 +3043,7 @@ section {
 }
 
 .footer .footer-content {
-  background: var(--color-secondary);
+  background: #091D3E; /* var(--color-secondary); */
   padding: 60px 0 30px 0;
 }
 
@@ -3169,7 +3169,7 @@ section {
 
 .footer .footer-legal {
   padding: 30px 0;
-  background: var(--color-secondary-dark);
+  background: #16448f /* var(--color-secondary-dark) */;
 }
 
 .footer .footer-legal .credits {
@@ -3222,8 +3222,7 @@ header {
   display: flex;
   width: 100%;
   height: 90px;
-
-  background: #d1d0d7;
+  background: #16448F/* #d1d0d7; */
 }
 
 header .logo{
@@ -3280,7 +3279,6 @@ header .container-header .mobile-menu samp{
   width: 60px;
   height: 60px;
   cursor: pointer;
-  color: red;
   font-size: 35px;
 }
 
@@ -3304,6 +3302,10 @@ header .container-header .mobile-menu samp{
   #faixaDeCima a{
     display: none;
   }
+
+  .row .textoCentro h1{
+    font-size: 40px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -3319,17 +3321,24 @@ header .container-header .mobile-menu samp{
 #faixaDeCima{
     background-color: #fff;
     height: 42px;
-    text-align: right;
+    /* text-align: right; */
+    justify-content: center;
   }
   #faixaDeCima a{
-    float: right;
-    color: black;
+    /* float: right; */
+    color: #1D2C38;
     text-align: center;
     cursor: pointer;
     padding-right: 30px;
-    margin-top: 7px;
+    margin-left: 40px;
     font-size: 15px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
+
+.menuHeder li a{
+  margin-top: 10px;
+}
 
 
 .mobile-conteudo{
@@ -3340,13 +3349,12 @@ header .container-header .mobile-menu samp{
 .mobile-conteudo span{
   cursor: pointer;
   font-size: 20px;
-  background-color: red;
 }
 .mobile-menu span{
   cursor: pointer;
   font-size: 30px;
   font-weight: 600;
-  color: #070944;
+  color: #ffffff;
 }
 
 .mobile-conteudo.mostra{
@@ -3361,7 +3369,7 @@ header .container-header .mobile-menu samp{
   align-items: center;
   text-align: center;
   display: flex;
-  color: #333333;
+  color: #ffffff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -3383,4 +3391,88 @@ header .container-header .mobile-menu samp{
   padding: 5px;
   border-radius: 5px;
   border: 2px solid #4a4a4b98;
+}
+
+ /* ==== HEADER tituloPrincipal1col =====*/
+.row .textoCentro h1{
+  color: #0C213D;/*  #070943 */
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.row .textoCentro h4{
+  font-size: 20px;
+  color: #0C213D;
+  font-weight: 700;
+}
+#home{
+  height: 60vh;
+}
+
+@media (max-width: 768px) {
+
+.row .textoCentro h1{
+  font-size: 50px;
+  }
+}
+/* ==== DIVISOR DE PAGINA =====*/
+
+.containerDivisor{
+  background-color: #16448F;
+  width: 50vw;
+  height: 120px; 
+  border-radius: 10px
+}
+.iconeDivisor{
+  font-size: 70px;
+  top: 10px
+}
+
+.iconeDivisor i{
+  color: #fff
+}
+
+.cta{
+  z-index: 1;
+  margin-top: -30px;
+}
+
+@media (max-width: 768px) {
+.containerDivisor{
+width: 70vw;
+height: 80px;
+}
+.iconeDivisor{
+font-size: 30px;
+padding: 20px;
+}
+
+.col-sm-4{
+  display: none;
+}
+}
+
+/* ==== PAGINA  SERVIÇOS=====*/
+.principalServicos{ 
+  height:500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  /* background-color: #0C213D; */
+}
+
+.principalServicos h1{
+ color: #FFFFFF;
+}
+
+.btnServicos{
+  background-color: #16448F;
+  color:#FFFFFF;
+  border-radius: 10px;
+}
+
+.btnServicos:hover{
+  color:#FFFFFF;
+  transition: 0.3s;
+  transform: scale(.97);
 }

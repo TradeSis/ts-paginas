@@ -1,27 +1,31 @@
-
-
+<?php 
+$perfil = buscaPerfil();
+?>
 <div class="container-fluid" id="faixaDeCima">
-    <a href=""><i class="bi bi-instagram"></i></a>
-    <a href="">Email: tradesis@tradesis.com.br</a>
-    <a href="">Telefone: (51) 99999-9999</a>
+  <div class="row">
+    <div class="col-sm-10 mt-2">
+      <a>Telefone: <?php echo $perfil['telefone']?></a>
+      <a>Email: <?php echo $perfil['email']?></a>
+    </div>
+    <div class="col-sm-2 mt-2">
+      <a href="https://www.instagram.com/<?php echo $perfil['instagram']?>"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.facebook.com/<?php echo $perfil['facebook']?>"><i class="bi bi-facebook"></i></a>
+      <a href="https://wa.me/55<?php echo $perfil['whatsapp']?>"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+   
    
 </div>
 <div class="root">
   <header>
     <div class="container-header">
-
-      <a href="<?php echo URLROOT?>"><img class="logo" src="<?php echo URLROOT?>/img/brand/logo.png" alt="" ></a>
-      
-
+    
+      <a href="<?php echo URLROOT?>"><img class="logo" src="<?php echo URLROOT?>/img/brand/white.png" alt="" ></a>
       <nav>
         <li><a href="#quem_somos" class="active">Quem somos</a></li>
-        <li><a href="#servicos" >Serviços</a></li>
-        <li><a href="#contato" >Contato</a></li>
+        <li><a href="#servicos" class="active">Serviços</a></li>
+        <li><a href="#contato" class="active">Contato</a></li>
       </nav>
-
-<!--       <div class="search-container">
-        <p></p>
-      </div> -->
 
 
       <div class="mobile-menu">
@@ -39,11 +43,11 @@ menu
   </div>
 </div>
  
-<div class="container-flex mobile-conteudo" style="text-align:center; background-color: #D1D0D7; ">
+<div class="container-flex mobile-conteudo" style="text-align:center; background-color: #0C2D4C; ">
     <div>
-      <a href="#quem_somos" class="active">quem somos</a>
-      <a href="#servicos" >serviços</a>
-      <a href="#contato" >Contato</a>
+      <a href="#quem_somos" class="active">Quem somos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
    </div>
 
 </div>
