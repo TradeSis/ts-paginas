@@ -1,25 +1,29 @@
 <?php
 
-$banners = buscaBanner();
-$banner = $banners[0];
+$banners = buscaBanners();
 
+/* $banner = $banners[0];
+echo json_encode($banner); */
 ?>
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="height: 300px;">
-  <div class="carousel-inner" style="height: 300px;">
+
+
+  <div class="carousel-inner"  style="height: 300px;">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="<?php echo URLROOT . "/img/imgBanner/" . $banner["imgBanner1"] ?>" alt="1">
+      <img class="d-block w-100" src="<?php echo URLROOT . "/img/imgBanner/" . $banners[0]["imgBanner"] ?>">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo URLROOT . "/img/imgBanner/" . $banner["imgBanner2"] ?>" alt="Second slide">
+      <img class="d-block w-100" src="<?php echo URLROOT . "/img/imgBanner/" . $banners[1]["imgBanner"] ?>">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo URLROOT . "/img/imgBanner/" . $banner["imgBanner3"] ?>" alt="Third slide">
+      <img class="d-block w-100" src="<?php echo URLROOT . "/img/imgBanner/" . $banners[2]["imgBanner"] ?>">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo URLROOT . "/img/imgBanner/" . $banner["imgBanner4"] ?>" alt="Third slide">
+      <img class="d-block w-100" src="<?php echo URLROOT . "/img/imgBanner/" . $banners[3]["imgBanner"] ?>">
     </div>
   </div>
+
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>

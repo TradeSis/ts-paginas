@@ -12,7 +12,7 @@ include_once(ROOT . '/sistema/database/temas.php');
 include_once(ROOT . '/sistema/database/paginas.php');
 include_once(ROOT . '/sistema/database/secaoPagina.php');
 include_once(ROOT . '/sistema/database/perfil.php');
-include_once(ROOT . '/sistema/database/secaoBanner.php');
+include_once(ROOT . '/sistema/database/banners.php');
 include_once(ROOT . '/sistema/database/posts.php');
 include_once(ROOT . '/sistema/database/produtos.php');
 include_once(ROOT . '/sistema/database/servicos.php');
@@ -27,7 +27,7 @@ $perfil = buscaPerfil();
 <link href="/ts/paginas/css/main.css" rel="stylesheet"> <!--Estilo da pg principal -->
 <script src="/ts/paginas/js/main.js"></script>
 
-<link href="/ts/paginas/css/<?php echo $tema["css"]; ?>" rel="stylesheet">
+
 
 
 <?php
@@ -58,6 +58,7 @@ if (isset($_GET['parametros'])) {
 
 $paginaDados = buscaPagina($pagina);
 
+
 if ($paginaDados['arquivoFonte'] !== 'index.php') {
 
   if (isset($paginaDados['arquivoSingle']) && !$slugSingle == null) {
@@ -78,7 +79,7 @@ foreach ($secoesPaginas as $secaoPagina) {
 
 
 ?>
-
+<link href="/ts/paginas/css/<?php echo $paginaDados["css"]; ?>" rel="stylesheet">
 
 
 
