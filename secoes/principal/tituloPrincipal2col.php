@@ -1,15 +1,6 @@
 <?php
 $parametro = json_decode($secaoPagina["parametros"],true);
 
-/* json{
-          "titulo" : "",
-          "subTitulo" : "",
-          "textoBotao" : "",
-          "pastaImg" : "",
-          "nomeImg": "temp2.png",
-        } 
-*/
-
 ?>
 
 <section id="home" class="onfocus mt-4" ><!--  style=" height:70vh" -->
@@ -29,9 +20,7 @@ $parametro = json_decode($secaoPagina["parametros"],true);
           </div>
 
           <div class="col-lg-6 position-relative">
-           <!--  <img src="<?php echo URLROOT?>/img/brand/temp2.png" class="img-fluid" alt=""> -->
            <div class="content d-flex flex-column justify-content-center h-100" >
-           <!-- <img src="<?php echo URLROOT?>/img/brand/temp2.png"> -->
            <img src="<?php echo URLROOT. $parametro['pastaImg'] . $parametro['nomeImg'] ?>" alt="">
              
             </div>
