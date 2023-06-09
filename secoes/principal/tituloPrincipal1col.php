@@ -1,15 +1,6 @@
 <?php
 $parametro = json_decode($secaoPagina["parametros"],true);
 
-/* json{
-          "titulo" : "FORTALECER O SEU NEGÓCIO",
-          "subTitulo" : "Serviços e soluções de TI para a sua empresa",
-          "textoBotao" : "Conheça os nossos Serviços",
-          "pastaImg" : "",
-          "nomeImg": "temp2.png",
-        } 
-*/
-
 ?>
 
 <section id="home" class="onfocus mt-4" ><!--  style=" height:70vh" -->

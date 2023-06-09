@@ -37,7 +37,7 @@ $json = '{"titulo":"SERVIÇOS E SOLUÇÕES","pastaImg":"/brand/imgServicos/","de
 
     <div class="section-header ">
       <h5><?php echo $parametro['titulo'] ?></h5>
-      <h2><?php echo $parametro['descritivo'] ?></h2>
+      <h2><?php echo $parametro['descricao'] ?></h2>
     </div>
 
     <div class="row">
@@ -47,7 +47,7 @@ $json = '{"titulo":"SERVIÇOS E SOLUÇÕES","pastaImg":"/brand/imgServicos/","de
         <div class="card">
           <div class="row">
             <div class="col-sm-2 text-center d-flex align-items-center align-self-center">
-                <img src="<?php echo URLROOT ?>/img/brand/<?php echo $servico['imgServico'] ?>" class="img-fluid ml-4" alt="">
+                <img src="<?php echo URLROOT . $parametro['pastaImg'] . $servico['imgServico'] ?>" class="img-fluid ml-4" alt="">
             </div>
             <div class="col-sm-10">
               <div class="card-body">

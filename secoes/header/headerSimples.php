@@ -1,14 +1,12 @@
-
+<?php 
+$parametro = json_decode($secaoPagina["parametros"],true);
+$menus = $parametro['menu'];
+?>
  <!-- ======= Header ======= -->
   <header id="header" class="header" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="<?php echo URLROOT;?>" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-       
-       
-        
-          <img src="<?php echo URLROOT;?>/img/imgPerfil/<?php echo $perfil["logo"] ?>" alt="" width="300" height="120">
+      <a href="<?php echo URLROOT;?>"><img src="<?php echo URLROOT . $parametro["pastaImg"] . $perfil["logo"] ?>" alt="" width="200px" height="80px">
              
         
       </a>
@@ -16,17 +14,15 @@
       <nav id="navbar" class="navbarPrincipal">
         <ul>
 
-          <li><a class="nav-link scrollto" href="index.html#marcas">Marcas</a></li>
-          <li><a class="nav-link scrollto" href="produtos">Produtos</a></li>
-          
-          <li><a href="blog">Blog</a></li>
-          <li><a class="nav-link scrollto" href="contato">Contato</a></li>
+        <?php 
+          foreach($menus as $menu){
+        ?>
+          <li><a href="<?php echo $menu['href']?>" class="active"><?php echo $menu['menu']?></a></li>
+        <?php } ?>
           
         </ul>
-        <i class="bi bi-list mobile-nav-toggle d-none"></i>
-      </nav><!-- .navbar -->
-
-      <a class="#" href="#"></a>
+        
+      </nav>
 
     </div>
   </header>

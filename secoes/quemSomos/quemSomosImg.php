@@ -1,5 +1,6 @@
 <?php
 $parametro = json_decode($secaoPagina["parametros"],true);
+$paragrafos = $parametro['paragrafos'];
 
 ?>
 <style>
@@ -12,7 +13,7 @@ $parametro = json_decode($secaoPagina["parametros"],true);
   }
 
   #quem_somos{
-    background-image: url('<?php echo URLROOT?>/img/brand/fundoQuemSomos.png');
+    background-image: url('<?php echo URLROOT . $parametro['pastaImg'] . $parametro['nomeImgFundo']?>');
   }
 </style>
 <!-- ======= Features Section ======= -->
@@ -22,7 +23,7 @@ $parametro = json_decode($secaoPagina["parametros"],true);
 
             <div class="col-lg-6  position-relative">
            <div class="content d-flex flex-column justify-content-center h-100" >
-           <img src="<?php echo URLROOT. $parametro['pastaimg']?>/temp1.png" alt="">
+           <img src="<?php echo URLROOT. $parametro['pastaImg'] . $parametro['nomeImg']?>" alt="">
              
             </div>
           </div>
@@ -35,14 +36,12 @@ $parametro = json_decode($secaoPagina["parametros"],true);
               <br>
               <br>
               </p>
-              <p><?php echo $parametro['descritivo'] ?></p>
-              <br>
-              <p><?php echo $parametro['paragrafo1'] ?></p>
-              <br>
-              <p><?php echo $parametro['paragrafo2'] ?></p>
-              <br>
-              <p><?php echo $parametro['paragrafo3'] ?></p>
-              <br>
+              <?php
+                foreach ($paragrafos as $paragrafo){ ?>
+                  <p><?php echo $paragrafo['paragrafo'] ?></p>
+                  <br>
+              <?php } ?>
+              
               
             </div>
           </div>
@@ -51,4 +50,4 @@ $parametro = json_decode($secaoPagina["parametros"],true);
         </div>
         
       </div>
-    </section><!-- End Features Section -->
+    </section>

@@ -2,7 +2,7 @@
 $parametro = json_decode($secaoPagina["parametros"],true);
 
 ?>
-<section id="contato" class="contact" style="background-color: #0C2D4C">
+<section id="contato" class="contact" style="background-color: <?php echo $parametro['corFundo'] ?>">
 
     <div class="container p-4" data-aos="fade-up" style="border-radius: 10px; background-color: #FFFFFF">
 
