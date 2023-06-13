@@ -1,10 +1,37 @@
 
+
+
+
+
+
 :root {
 
   /* Fonts */
   --font-default: 'Open Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: 'Source Sans Pro', sans-serif;
   --font-secondary: 'Poppins', sans-serif;
+
+ /*  Variaveis de cores personalizadas */
+ --color-header-primary: #0C2D4C;
+ --color-header-secondary: #ffffff;
+ --color-h1-primary: #1a1f24;
+ --color-h1-secondary: #ffffff;
+ --color-h2: #1a1f24;
+ --color-h3: #1a1f24;
+ --color-h4: #1a1f24;
+ --color-btn-text: #ffffff;
+ --color-btn-primary: #0f4272;
+ --color-btn-secondary: #005cb3;
+ --color-fundo-primary: #0C2D4C;
+ --color-fundo-secondary: #005cb3;
+ --color-footer-primary: #0C2D4C;
+ --color-footer-secondary: #005cb3;
+ --color-icone: #fff;
+ --color-sociaisIcons-primary: #1D2C38;
+ --color-sociaisIcons-secundary: #ffffff;
+ 
+
+
 
   /* Colors */
   /* The *-rgb color names are simply the RGB converted value of the corresponding color for use in the rgba() function */

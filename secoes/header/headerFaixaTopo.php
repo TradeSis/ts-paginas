@@ -47,9 +47,6 @@ menu
     
   </header>
 
-  <div class="container">
-    <!-- Conteudo aqui -->
-  </div>
 </div>
  
 <div class="container-flex mobile-conteudo" style="text-align:center; background-color: #0C2D4C; ">

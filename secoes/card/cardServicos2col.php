@@ -20,8 +20,8 @@ $json = '{"titulo":"SERVIÇOS E SOLUÇÕES","pastaImg":"/brand/imgServicos/","de
     color: #485664;
   }
 
-  .card-body .btn{
-    color: #0C2D4C;
+  .card-body .btnCardServico{
+    color: var(--color-btn-primary);
     font-weight: 700;
   }
 
@@ -53,7 +53,7 @@ $json = '{"titulo":"SERVIÇOS E SOLUÇÕES","pastaImg":"/brand/imgServicos/","de
               <div class="card-body">
                 <h5 class="card-title"><?php echo $servico['nomeServico'] ?></h5>
                 <p class="card-text"><?php echo $servico['descricaoServico'] ?>.</p>
-                <a href="<?php echo $servico['linkServico'] ?>" class="btn"><?php echo $parametro['textoBotao'] ?><i class="bi bi-caret-right-fill"></i></a>
+                <a href="<?php echo $servico['linkServico'] ?>" class="btnCardServico"><?php echo $parametro['textoBotao'] ?><i class="bi bi-caret-right-fill"></i></a>
               </div>
             </div>
           </div>

@@ -46,7 +46,7 @@ $slugSingle = null;
 
 if (isset($_GET['parametros'])) {
   $paginas = explode('/', $_GET['parametros']);
-
+ 
 
   $pagina = $paginas[0];
 
@@ -70,7 +70,6 @@ if ($paginaDados['arquivoFonte'] !== 'index.php') {
 }
 
 $secoesPaginas = buscaSecaoPagina($paginaDados['idPagina']);
-
 
 foreach ($secoesPaginas as $secaoPagina) {
     

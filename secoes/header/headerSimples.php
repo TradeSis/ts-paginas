@@ -6,7 +6,7 @@ $menus = $parametro['menu'];
   <header id="header" class="header" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="<?php echo URLROOT;?>"><img src="<?php echo URLROOT . $parametro["pastaImg"] . $perfil["logo"] ?>" alt="" width="200px" height="80px">
+      <a href="<?php echo URLROOT;?>"><img src="<?php echo URLROOT . $parametro["pastaImg"] . $parametro["nomeImg"] ?>" alt="" width="200px" height="80px">
              
         
       </a>

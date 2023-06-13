@@ -10,7 +10,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
 
         <div class="col-lg-4 col-md-4">
           <div class="footer-info">
-            <img src="<?php echo URLROOT . $parametro["pastaImg"] . $perfil["logo"] ?>" alt="" width="300" height="120">
+            <img src="<?php echo URLROOT . $parametro["pastaImg"] . $parametro["nomeImg"] ?>" alt="" width="300" height="120">
 
             <br>
             <br>
