@@ -1,10 +1,4 @@
-.header{
-  background-color: rgb(228, 60, 60);
-}
 
-.navbarPrincipal a{
-color: #fff;
-}
 
 :root {
 
@@ -12,6 +6,25 @@ color: #fff;
   --font-default: 'Open Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: 'Source Sans Pro', sans-serif;
   --font-secondary: 'Poppins', sans-serif;
+
+   /*  Variaveis de cores personalizadas */
+ --color-header-primary: #c00719;
+ --color-header-secondary: #ffffff;
+ --color-h1-primary: #1a1f24;
+ --color-h1-secondary: #ffffff;
+ --color-h2: #1a1f24;
+ --color-h3: #1a1f24;
+ --color-h4: #1a1f24;
+ --color-btn-text: #ffffff;
+ --color-btn-primary: #df1529;
+ --color-btn-secondary: #be0e20;
+ --color-fundo-primary: #df1529;
+ --color-fundo-secondary: #be0e20;
+ --color-footer-primary: #c00719;
+ --color-footer-secondary: #a10616;
+ --color-icone: #fff;
+ --color-sociaisIcons-primary: #1D2C38;
+ --color-sociaisIcons-secundary: #ffffff;
 
   /* Colors */
   /* The *-rgb color names are simply the RGB converted value of the corresponding color for use in the rgba() function */
@@ -34,9 +47,9 @@ color: #fff;
   --color-primary-dark-rgb: 192, 7, 25;
 
   /* Secondary colors */
-  --color-secondary: #485664;
+  --color-secondary: #df1529;
   --color-secondary-light: #8f9fae;
-  --color-secondary-dark: #3a4753;
+  --color-secondary-dark: #c00719;
 
   --color-secondary-rgb: 72, 86, 100;
   --color-secondary-light-rgb: 143, 159, 174;

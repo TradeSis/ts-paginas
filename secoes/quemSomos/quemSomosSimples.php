@@ -5,15 +5,15 @@ $paragrafos = $parametro['paragrafos'];
 ?>
 <style>
   p{
-    color: #ffffff;
+    color: var(--color-btn-text);
   }
   h1{
-    color: #ffffff;
+    color: var(--color-h1-secondary);
     font-weight: 900
   }
 
   #quem_somos{
-    background-color: <?php echo $parametro['corFundo'] ?>;
+    background-color: var(--color-fundo-secondary);
   }
 </style>
 <!-- ======= Features Section ======= -->

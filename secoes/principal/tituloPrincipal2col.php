@@ -15,7 +15,7 @@ $parametro = json_decode($secaoPagina["parametros"],true);
             
               </p>
               
-              <a href="#contato" class="read-more align-self-start" style="background-color: <?php echo $parametro['corBotao'] ?>;"><span><?php echo $parametro['textoBotao'] ?></span><i class="bi bi-arrow-right"></i></a>
+              <a href="#contato" class="read-more align-self-start"><span><?php echo $parametro['textoBotao'] ?></span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
