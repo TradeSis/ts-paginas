@@ -19,7 +19,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
 
       <div class="d-flex flex-column align-items-center align-items-lg-start">
         <div class="copyright">
-          <h5><?php echo $parametro["textoRedeSociais"] ?><br></h5>
+          <h5><?php echo $parametro["textoFooter1"] ?><br></h5>
           <br>
           <i class="bi bi-whatsapp"></i>&nbsp;<?php echo $perfil["whatsapp"] ?><br>
           <?php echo $perfil["email"] ?><br>
@@ -28,7 +28,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
       </div>
 
       <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-          <h5><?php echo $parametro["textoRedeSociais"] ?><br></h5>
+          <h5><?php echo $parametro["textoFooter2"] ?><br></h5>
         <br>
         <a href="<?php echo $perfil["facebook"] ?>" class="mt-4 facebook"><i class="bi bi-facebook"></i></a>
         <a href="<?php echo $perfil["instagram"] ?>" class="instagram"><i class="bi bi-instagram"></i></a>

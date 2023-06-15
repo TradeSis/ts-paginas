@@ -30,13 +30,6 @@ $posts = buscaPosts(null, $titulo, $categoria);
 //echo json_encode(URLROOT);
 
 ?>
-<style>
-  article{
-    background-color: red;
-    padding-top: 50px;
-  }
-</style>
-
 
 <body>
 
@@ -60,27 +53,46 @@ $posts = buscaPosts(null, $titulo, $categoria);
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
-      <div class="container-flex ml-4 mr-4"  data-aos="fade-up">
+      <div class="container" data-aos="fade-up">
 
         <div class="row g-5">
 
           <div class="col-lg-8">
 
-            <div class="row gy-4 posts-list ">
+            <div class="row gy-4 posts-list">
               <?php foreach ($posts as $post) { ?>
 
-                <div class="col-lg-5 mt-4 shadow ml-3" style="border-radius: 25px;">
+                <div class="col-lg-6 mt-4">
                   <article class="d-flex flex-column">
-                    <div class="post-img" >
-                      <img src="img/imgPosts/<?php echo $post["imgDestaque"] ?>" alt="Responsive image" class="img-fluid">
+                    <div class="post-img">
+                      <img src="img/imgPosts/<?php echo $post["imgDestaque"] ?>" alt="" class="img-fluid">
                     </div>
 
                     <h2 class="title">
                       <a href="blog-details.html"><?php echo $post["titulo"] ?></a>
                     </h2>
 
+                    <div class="meta-top">
+                      <ul>
+                        <div class="row">
+                          <div class="col">
+                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href=""><?php echo $post["autor"] ?></a></li>
+                            <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href=""><?php echo $post["comentarios"] ?></a></li>
+                          </div>
+                          <div class="col">
+                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href=""><time><?php echo date('d/m/Y', strtotime($post['data'])) ?></time></a></li>
+                            <li class="d-flex align-items-center"><i class="bi bi-tag"></i> <a href=""><?php echo $post["categoria"] ?></a></li>
+                          </div>
+                        </div>
+                      </ul>
+                    </div>
+
+                    <div class="content">
+                      <p><?php echo $post["textoIntro"] ?>.</p>
+                    </div>
+
                     <div class="read-more mt-auto align-self-end">
-                      <li class="d-flex align-items-center"><a href=""><?php echo $post["autor"] ?></a></li>
+                      <a href="blog/<?php echo $post['slug'] ?>">Ler mais</a>
                     </div>
                   </article>
                 </div>
