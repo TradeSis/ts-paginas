@@ -1,7 +1,6 @@
 <?php
 
 $parametro = json_decode($secaoPagina["parametros"], true);
-$itens = $parametro["itens"];
 
 
 ?>
@@ -37,9 +36,13 @@ $itens = $parametro["itens"];
         </div>
         <div class="row justify-content-center">
             <ul class="list-group">
-                <?php foreach ($itens as $item) { ?>
-                    <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $item["item"] ?></li>
-                <?php } ?>
+                
+                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $parametro["item1"] ?></li>
+                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $parametro["item2"] ?></li>
+                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $parametro["item3"] ?></li>
+                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $parametro["item4"] ?></li>
+                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $parametro["item5"] ?></li>
+              
             </ul>
         </div>  
 

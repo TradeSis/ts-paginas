@@ -50,7 +50,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
 
       <div class="d-flex flex-column align-items-center align-items-lg-start">
         <div class="copyright">
-          <?php echo $parametro["textoRedeSociais"] ?>
+          <?php echo $parametro["textoRedesSociais"] ?>
         </div>
 
       </div>
