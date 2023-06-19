@@ -3,8 +3,6 @@ include_once('../head.php');
 include_once('../database/secaoPagina.php');
 
 $parametros = json_decode($secoesPagina['parametros'], true);
-$paragrafos = $parametros["paragrafos"];
-echo json_encode($paragrafos);
 ?>
 
 <div class="row">
@@ -27,4 +25,11 @@ echo json_encode($paragrafos);
         <label>Imagem Fundo</label>
         <input type="text" name="nomeImgFundo" class="form-control" value="<?php echo $parametros["nomeImgFundo"] ?>">
     </div>
+</div>
+
+<div class="row  mt-2">
+  <div class="col-sm-3">
+     <label>Descrição</label>
+    <textarea name="descricao" id="" cols="140" rows="15"><?php echo $parametros["descricao"] ?></textarea>
+  </div>
 </div>

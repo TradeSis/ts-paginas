@@ -31,10 +31,10 @@ $posts = buscaPosts(null, $titulo, $categoria);
 
 ?>
 <style>
-  article{
+ /*  article{
     background-color: red;
     padding-top: 50px;
-  }
+  } */
 </style>
 
 

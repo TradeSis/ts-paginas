@@ -8,12 +8,12 @@ $parametros = json_decode($secoesPagina['parametros'], true);
 
 <div class="row">
     <div class="col-sm-4" style="margin-top: 10px">
-        <label>textoFooter1</label>
-        <input type="text" name="textoFooter1" class="form-control" value="<?php echo $parametros["textoFooter1"] ?>">
+        <label>texto1</label>
+        <input type="text" name="texto1" class="form-control" value="<?php echo $parametros["texto1"] ?>">
     </div>
     <div class="col-sm-8" style="margin-top: 10px">
-        <label>textoFooter2</label>
-        <input type="text" name="textoFooter2" class="form-control" value="<?php echo $parametros["textoFooter2"] ?>">
+        <label>texto2</label>
+        <input type="text" name="texto2" class="form-control" value="<?php echo $parametros["texto2"] ?>">
     </div>
 </div>
 
