@@ -3,6 +3,8 @@ include_once('../head.php');
 include_once('../database/secaoPagina.php');
 
 $parametros = json_decode($secoesPagina['parametros'], true);
+
+
 ?>
 
 <div class="container" style="margin-top: 10px">
@@ -26,6 +28,13 @@ $parametros = json_decode($secoesPagina['parametros'], true);
             <div class="col-sm-6">
                 <label>textoEmail</label>
                 <input type="text" name="textoEmail" class="form-control" value="<?php echo $parametros["textoEmail"] ?>">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label>Menus</label>
+                <textarea name="listas" id="" cols="130" rows="10"><?php echo $secoesPagina['listas'] ?></textarea>
             </div>
         </div>
 
