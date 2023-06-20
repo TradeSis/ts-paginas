@@ -2,8 +2,7 @@
 $perfil = buscaPerfil();
 
 $parametro = json_decode($secaoPagina["parametros"],true);
-$menus = $parametro['menu'];
-
+$menus = json_decode($secaoPagina["listas"],true);
 ?>
 <div class="container-fluid" id="faixaDeCima">
   <div class="row">
