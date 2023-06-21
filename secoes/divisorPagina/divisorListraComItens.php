@@ -1,7 +1,7 @@
 <?php
 
 $parametro = json_decode($secaoPagina["parametros"], true);
-
+$listas = json_decode($secaoPagina["listas"], true);
 
 ?>
 <style>
@@ -36,12 +36,10 @@ $parametro = json_decode($secaoPagina["parametros"], true);
         </div>
         <div class="row justify-content-center">
             <ul class="list-group">
+            <?php foreach ($listas as $lista) { ?>
+                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $lista["paragrafo"] ?></li>
+            <?php } ?>
                 
-                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $parametro["item1"] ?></li>
-                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $parametro["item2"] ?></li>
-                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $parametro["item3"] ?></li>
-                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $parametro["item4"] ?></li>
-                <li class="list-group-item"><i class="bi bi-check-lg"></i><?php echo $parametro["item5"] ?></li>
               
             </ul>
         </div>  

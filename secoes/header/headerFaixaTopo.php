@@ -2,7 +2,12 @@
 $perfil = buscaPerfil();
 
 $parametro = json_decode($secaoPagina["parametros"],true);
-$menus = json_decode($secaoPagina["listas"],true);
+//$menus = json_decode($secaoPagina["listas"],true);
+
+//echo json_encode($paginaDados);
+$temas = buscaTemas($paginaDados['idTema']);
+$menus = json_decode($temas['menu'],true);
+
 ?>
 <div class="container-fluid" id="faixaDeCima">
   <div class="row">
@@ -24,7 +29,7 @@ $menus = json_decode($secaoPagina["listas"],true);
   <header>
     <div class="container-header">
     
-      <a href="<?php echo URLROOT?>"><img class="logo" src="<?php echo URLROOT . $parametro['pastaImg'] . $parametro['nomeImg']?>" alt="" ></a>
+      <a href="<?php echo URLROOT?>"><img class="logo" src="<?php echo URLROOT ?>/img/<?php echo $parametro['logo']?>" alt="" ></a>
       <nav>
         <?php 
           foreach($menus as $menu){

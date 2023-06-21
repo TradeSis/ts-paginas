@@ -1,5 +1,6 @@
 <?php
 $parametro = json_decode($secaoPagina["parametros"], true);
+$perfil = json_decode($temas['perfil'],true);
 ?>
 <style>
   .copyright{

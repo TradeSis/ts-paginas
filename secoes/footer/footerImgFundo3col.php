@@ -1,7 +1,6 @@
 <?php
-$perfil = buscaPerfil();
-
 $parametro = json_decode($secaoPagina["parametros"], true);
+$perfil = json_decode($temas['perfil'],true);
 ?>
 
 
@@ -13,7 +12,7 @@ $parametro = json_decode($secaoPagina["parametros"], true);
     }
 
     .footer .footer-content {
-        background-image: url('<?php echo URLROOT . $parametro['pastaImg'] . $parametro['nomeImg'] ?>');
+        background-image: url('<?php echo URLROOT ?>/img/<?php echo $parametro['img'] ?>');
         /* /img/brand/imgFooter.png */
         background-repeat: no-repeat;
         background-size: cover;

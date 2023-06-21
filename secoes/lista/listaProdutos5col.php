@@ -10,7 +10,7 @@ $parametro = json_decode($secaoPagina["parametros"],true);
     <div class="row">
       <?php foreach ($produtos as $produto) { ?>
         <div class="card mt-3 mr-2" style="width: 18rem;">
-          <img class="card-img-top" src="<?php echo URLROOT . $parametro["pastaImg"] . $produto["fotoProduto"] ?>" alt="Card image cap">
+          <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $produto["fotoProduto"] ?>" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">
               <?php echo $produto["nomeProduto"] ?>
