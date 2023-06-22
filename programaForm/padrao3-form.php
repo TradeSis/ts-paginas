@@ -1,4 +1,3 @@
-
 <?php
 include_once('../head.php');
 include_once('../database/temas.php');
@@ -9,7 +8,19 @@ $perfil = json_decode($tema['perfil'], true);
 ?>
 
 <div class="container" style="margin-top: 10px">
-    <div class="row form-group">
+    <h5>Menu</h5>
+    <hr>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-sm-6">
+            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Menu</label>
+            <textarea name="menu" id="" cols="130" rows="5"><?php echo $tema['menu'] ?></textarea>
+        </div>
+    </div>
+    <br>
+    <h5>Perfil</h5>
+    <hr>
+    <br>
+    <div class="row form-group mt-4">
         <div class="col-sm-4" style="margin-top: -20px">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Foto Perfil</label>
             <label class="picture" for="imgPerfil" tabIndex="0">
@@ -77,15 +88,8 @@ $perfil = json_decode($tema['perfil'], true);
             <input type="text" name="instagram" class="form-control" value="<?php echo $perfil["instagram"] ?>">
         </div>
     </div>
-    <br>
-    <h5>Menu</h5>
     <hr>
-    <div class="row" style="margin-top: 30px;">
-        <div class="col-sm-6">
-            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Menu</label>
-            <textarea name="menu" id="" cols="130" rows="5"><?php echo $tema['menu'] ?></textarea>
-        </div>
-    </div>
+
 
 
 </div>
