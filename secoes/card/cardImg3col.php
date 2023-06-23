@@ -1,6 +1,5 @@
 <?php
 $parametro = json_decode($secaoPagina["parametros"], true);
-$listas = json_decode($secaoPagina["listas"], true);
 ?>
 
 <section id="servicos" class="values">
@@ -14,13 +13,22 @@ $listas = json_decode($secaoPagina["listas"], true);
 
     <div class="row">
 
-      <?php foreach ($listas as $lista) { ?>
         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
           <div>
-            <a href="<?php echo $lista['href'] ?>"><img src="<?php echo URLROOT ?>/img/<?php echo $lista['img'] ?>" class="img-fluid" alt=""></a>
+            <a href="<?php echo $parametro['link1'] ?>"><img src="<?php echo URLROOT ?>/img/<?php echo $parametro['img1'] ?>" class="img-fluid" alt=""></a>
           </div>
         </div>
-      <?php } ?>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <a href="<?php echo $parametro['link2'] ?>"><img src="<?php echo URLROOT ?>/img/<?php echo $parametro['img2'] ?>" class="img-fluid" alt=""></a>
+          </div>
+        </div>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <a href="<?php echo $parametro['link3'] ?>"><img src="<?php echo URLROOT ?>/img/<?php echo $parametro['img3'] ?>" class="img-fluid" alt=""></a>
+          </div>
+        </div>
+
 
     </div>
 
