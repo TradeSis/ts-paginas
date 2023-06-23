@@ -6,23 +6,19 @@ $parametros = json_decode($secoesPagina['parametros'], true);
 
 ?>
 
-<div class="row">
+<div class="row form-group">
     <div class="col-sm-4" style="margin-top: 10px">
-        <label>Titulo</label>
+        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Titulo</label>
         <input type="text" name="titulo" class="form-control" value="<?php echo $parametros["titulo"] ?>">
     </div>
     <div class="col-sm-8" style="margin-top: 10px">
-        <label>Descrição</label>
+        <label class='control-label' for='inputNormal' style="margin-top: -20px;">Descrição</label>
         <input type="text" name="descricao" class="form-control" value="<?php echo $parametros["descricao"] ?>">
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-4" style="margin-top: 10px">
-        <label>Pasta Imagem</label>
-        <input type="text" name="pastaImg" class="form-control" value="<?php echo $parametros["pastaImg"] ?>">
-    </div>
+<div class="row form-group">
     <div class="col-sm-8" style="margin-top: 10px">
-        <label>texto Botão</label>
+        <label class='control-label' for='inputNormal' style="margin-top: -20px;">texto Botão</label>
         <input type="text" name="textoBotao" class="form-control" value="<?php echo $parametros["textoBotao"] ?>">
     </div>
 </div>

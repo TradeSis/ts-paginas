@@ -21,7 +21,7 @@ $parametro = json_decode($secaoPagina["parametros"],true);
 
           <div class="col-lg-6 position-relative">
            <div class="content d-flex flex-column justify-content-center h-100" >
-           <img src="<?php echo URLROOT. $parametro['pastaImg'] . $parametro['nomeImg'] ?>" alt="">
+           <img src="<?php echo URLROOT ?>/img/<?php echo $parametro['img'] ?>" alt="">
              
             </div>
           </div>
