@@ -1,13 +1,8 @@
 <?php 
-$perfil = buscaPerfil();
-
 $parametro = json_decode($secaoPagina["parametros"],true);
-//$menus = json_decode($secaoPagina["listas"],true);
-
-//echo json_encode($paginaDados);
 $temas = buscaTemas($paginaDados['idTema']);
 $menus = json_decode($temas['menu'],true);
-
+$perfil = json_decode($temas['perfil'],true);
 ?>
 <div class="container-fluid" id="faixaDeCima">
   <div class="row">

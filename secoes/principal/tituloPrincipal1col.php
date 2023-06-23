@@ -1,6 +1,5 @@
 <?php
 $parametro = json_decode($secaoPagina["parametros"],true);
-//echo json_encode($parametro);
 ?>
 
 <section id="home" class="onfocus mt-4" ><!--  style=" height:70vh" -->
