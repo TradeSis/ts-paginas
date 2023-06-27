@@ -13,6 +13,7 @@ foreach ($secoesPaginas as $secaoPagina) {
   if ($secaoPagina["arquivoFonte"] == "pagina") {
     break;
   }
+
 }
 
 if (isset($_GET['titulo'])) {
@@ -27,21 +28,24 @@ if (isset($_GET['categoria'])) {
   $categoria = null;
 }
 $posts = buscaPosts(null, $titulo, $categoria);
+//echo json_encode(URLROOT);
 
 ?>
 <link href="<?php echo URLROOT ?>/paginas/css/<?php echo $paginaDados["css"]; ?>" rel="stylesheet">
 
 <body>
 
+
+
   <main id="main">
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
-      <div class="container" data-aos="fade-up">
+      <div class="container-fluid" data-aos="fade-up">
 
         <div class="row g-5">
 
-          <div class="col-lg-8"> <!-- parte 1 -->
+          <div class="col-lg-6"> <!-- parte 1 -->
 
             <div class="row gy-4 posts-list">
               <?php
@@ -64,7 +68,7 @@ $posts = buscaPosts(null, $titulo, $categoria);
 
           </div>
 
-          <div class="col-lg-4"> <!-- parte 2 -->
+          <div class="col-lg-6"> <!-- parte 2 -->
             <div class="sidebar">
 
               <?php
