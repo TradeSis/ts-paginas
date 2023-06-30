@@ -1,23 +1,8 @@
 
-<style>
-  .carousel-inner{
-    border-radius: 5%;
-  }
-  .carousel{
-   
-    border-radius: 5%;
-  }
-  .sidebar-item{
-   
-    border-radius: 5%;
-    height: 308px;
-    /* width: 300px; */
-    
-  }
-</style>
 
 
-<div class="sidebar-item mt-2 shadow">
+
+<div class="sidebar-item mt-2 ">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -44,10 +29,4 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-<center>
-  <br>
-<hr>
-  <p>titulo do produto</p>
-</center>
 </div>
