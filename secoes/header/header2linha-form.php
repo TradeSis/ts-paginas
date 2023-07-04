@@ -9,7 +9,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
 <div class="container" style="margin-top: 10px">
     <div class="row form-group">
         <div class="col-sm-4" style="margin-top: -20px">
-            <label class='control-label' for='inputNormal' style="margin-top: -20px;">Logo</label>
+            <label class='control-label' for='inputNormal' style="margin-top: -45px;">Logo</label>
             <label class="picture" for="logo" tabIndex="0">
                 <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["logo"] ?>" height="80%" width="80%" alt="">
             </label>
@@ -17,16 +17,6 @@ $parametros = json_decode($secoesPagina['parametros'], true);
         </div>
     </div>
 
-    <div class="row form-group">
-        <div class="col-sm-6">
-            <label class='control-label' for='inputNormal' style="margin-top: -4px;">textoWhatsapp</label>
-            <input type="text" name="textoWhatsapp" class="form-control" value="<?php echo $parametros["textoWhatsapp"] ?>">
-        </div>
-        <div class="col-sm-6">
-            <label class='control-label' for='inputNormal' style="margin-top: -4px;">textoEmail</label>
-            <input type="text" name="textoEmail" class="form-control" value="<?php echo $parametros["textoEmail"] ?>">
-        </div>
-    </div>
 
 
 </div>
