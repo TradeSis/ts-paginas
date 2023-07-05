@@ -442,15 +442,15 @@ section {
 # Mobile Navigation
 --------------------------------------------------------------*/
 @media (max-width: 1279px) {
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: calc(100% - 70px);
-    bottom: 0;
-    transition: 0.3s;
-    z-index: 9997;
-  }
+    .navbar {
+      position: fixed;
+      top: 0;
+      /* left: -100%; */
+      width: calc(100% - 70px);
+      bottom: 0;
+      transition: 0.3s;
+      z-index: 9997;
+    }
 
   .navbar ul {
     position: absolute;
@@ -536,7 +536,7 @@ section {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(var(--color-secondary-rgb), 0.8);
+    background: red;
     z-index: 9996;
   }
 }

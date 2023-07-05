@@ -1,6 +1,9 @@
 <?php
 include_once(ROOT . '/sistema/database/eventos.php');
 $visitacoes = buscaEventosPodcasts();
+
+include_once(ROOT . '/sistema/database/marcas.php');
+$marcas = buscaMarcas();
 ?>
 <style>
     a {
@@ -46,18 +49,22 @@ $visitacoes = buscaEventosPodcasts();
             <h2>Podcasts</h2>
         </div>
         <hr>
-    <div class="card-deck" style="margin-top: 30px;">
-        <?php foreach ($visitacoes as $visitacao) {  ?>
-            <div class="card cardPodcast">
-                <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $visitacao['capaEvento'] ?>" alt="Card image cap">
-                <div class="card-body text-center">
-                    <h5 class="card-title" href="noticias/<?php echo $visitacao['nomeEvento'] ?>"><?php echo $visitacao['nomeEvento'] ?></h5>
-                    <p><?php echo $visitacao['localEvento'] ?></p>
-                </div>
+    
 
-            </div>
-        <?php } ?>
+
+    <div class="row">
+
+    <?php foreach ($marcas as $marcas) {  ?>
+  <div class="col-sm-2" data-aos="fade-up" data-aos-delay="200">
+    <div class="box text-center">
+      <img src="<?php echo URLROOT ?>/img/<?php echo $marcas['imgMarca'] ?>" class="img-fluid" alt="">
+      <p><?php echo $marcas['nomeMarca'] ?></p>
+      
     </div>
+  </div>
+<?php } ?>
+</div>
+
 </div>
 
 

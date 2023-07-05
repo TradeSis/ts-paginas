@@ -1,13 +1,13 @@
 <?php
-    include_once(ROOT . '/sistema/database/catalogo.php');
-    $catalogos = buscaCardCatalogo();
-   //echo json_encode($catalogos);
+    include_once(ROOT . '/sistema/database/produtos.php');
+    $produtos = buscaCardProdutos();
+   //echo json_encode($produtos);
 ?>
 <style>
 
 
 </style>
-<?php foreach($catalogos as $catalogo){ ?>
+<?php foreach($produtos as $produto){ ?>
   <?php } ?>
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -15,9 +15,9 @@
     <div class="carousel-item active">
       <img class="d-block w-100" src="<?php echo URLROOT ?>/img/logo_comcacau.png" alt="First slide">
     </div>
-    <?php foreach($catalogos as $catalogo){ ?>
+    <?php foreach($produtos as $produto){ ?>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo URLROOT ?>/img/<?php echo $catalogo['imgProduto'] ?>" alt="Second slide">
+      <img class="d-block w-100" src="<?php echo URLROOT ?>/img/<?php echo $produto['imgProduto'] ?>" alt="Second slide">
     </div>
     <?php } ?>
    

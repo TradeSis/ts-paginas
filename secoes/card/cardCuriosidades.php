@@ -1,7 +1,6 @@
 <?php
-    include_once(ROOT . '/sistema/database/noticias.php');
-    $noticias = buscaNoticiasCuriosidades();
-    //echo json_encode($noticias);
+    include_once(ROOT . '/sistema/database/posts.php');
+    $posts = buscaPostCuriosidades();
 ?>
 <style>
   p {
@@ -33,20 +32,16 @@
       <h2>notícias sobre chocolate</h2>
     </div>
     <hr>
-    <div class="row p-0" >
-        
-        <?php foreach($noticias as $noticia) {  ?>
-            <div class="col-sm-6 mt-2">
-            <div class="card" style="width: 450px;">
-                <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $noticia['imgNoticia'] ?>" alt="Card image cap">
+    <div class="card-deck" style="margin-top: 30px;">
+    <?php foreach($posts as $post) {  ?>
+            <div class="card">
+                <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $post['imgDestaque'] ?>" alt="Card image cap">
                 <div class="card-body">
-                  <a href="noticias/<?php echo $noticia['tituloNoticia'] ?>"><?php echo $noticia['tituloNoticia'] ?></a>
+                  <a href="noticias/<?php echo $post['slug'] ?>"><?php echo $post['titulo'] ?></a>
                 </div>
+
             </div>
-        
-        </div>
         <?php } ?>
-      
     </div>
   </div>
 

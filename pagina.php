@@ -11,14 +11,11 @@ include_once ROOT. "/vendor/vendor.php";
 include_once(ROOT . '/sistema/database/temas.php');
 include_once(ROOT . '/sistema/database/paginas.php');
 include_once(ROOT . '/sistema/database/secaoPagina.php');
-//include_once(ROOT . '/sistema/database/perfil.php');
-//include_once(ROOT . '/sistema/database/banners.php');
 include_once(ROOT . '/sistema/database/posts.php');
 include_once(ROOT . '/sistema/database/produtos.php');
 include_once(ROOT . '/sistema/database/servicos.php');
 
 $tema = buscatema();
-//$perfil = buscaPerfil();
 
 
 ?>
