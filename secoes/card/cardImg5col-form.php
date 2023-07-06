@@ -5,10 +5,11 @@ include_once('../database/secaoPagina.php');
 $parametros = json_decode($secoesPagina['parametros'], true);
 ?>
 <style>
-    .picture{
+    .picture {
         border-radius: 0;
     }
-    .picture img{
+
+    .picture img {
         width: 100%;
         height: 100%;
     }
@@ -16,11 +17,19 @@ $parametros = json_decode($secoesPagina['parametros'], true);
 
 <div class="container" style="margin-top: 10px">
 
+
+    <div class="row form-group" style="margin-bottom: 60px">
+        <div class="col-sm-12">
+            <label class='control-label' for='inputNormal' style="margin-top: -10px;">Titulo</label>
+            <input type="text" name="titulo" class="form-control" value="<?php echo $parametros["titulo"] ?>">
+        </div>
+    </div>
+
     <div class="row form-group">
         <div class="col-sm-4" style="margin-top: -20px">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Imagem1</label>
             <label class="picture" for="img1" tabIndex="0">
-                <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["img1"] ?>"  alt="">
+                <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["img1"] ?>" alt="">
             </label>
             <input type="file" name="img1" id="img1">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">tituloCard1</label>
@@ -30,7 +39,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
         <div class="col-sm-4" style="margin-top: -20px">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Imagem2</label>
             <label class="picture" for="img2" tabIndex="0">
-                <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["img2"] ?>"  alt="">
+                <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["img2"] ?>" alt="">
             </label>
             <input type="file" name="img2" id="img2">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">tituloCard2</label>
@@ -40,7 +49,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
         <div class="col-sm-4" style="margin-top: -20px">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Imagem3</label>
             <label class="picture" for="img3" tabIndex="0">
-                <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["img3"] ?>"  alt="">
+                <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["img3"] ?>" alt="">
             </label>
             <input type="file" name="img3" id="img3">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">tituloCard3</label>
@@ -50,7 +59,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
         <div class="col-sm-4" style="margin-top: 40px">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Imagem4</label>
             <label class="picture" for="img4" tabIndex="0">
-                <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["img4"] ?>"  alt="">
+                <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["img4"] ?>" alt="">
             </label>
             <input type="file" name="img4" id="img4">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">tituloCard4</label>
@@ -60,7 +69,7 @@ $parametros = json_decode($secoesPagina['parametros'], true);
         <div class="col-sm-4" style="margin-top: 40px">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">Imagem5</label>
             <label class="picture" for="img5" tabIndex="0">
-                <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["img5"] ?>"  alt="">
+                <img src="<?php echo URLROOT ?>/img/<?php echo $parametros["img5"] ?>" alt="">
             </label>
             <input type="file" name="img5" id="img5">
             <label class='control-label' for='inputNormal' style="margin-top: -20px;">tituloCard5</label>

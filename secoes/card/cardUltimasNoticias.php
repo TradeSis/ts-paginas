@@ -1,5 +1,6 @@
 <?php
     include_once(ROOT . '/sistema/database/posts.php');
+    $parametro = json_decode($secaoPagina["parametros"], true);
     $posts = buscaPostsRecentes();
 ?>
 <style>
@@ -31,12 +32,12 @@
 <section>
 <div class="container-fluid">
 <div class="row titulo" style="margin-top: -50px;">
-      <h2>Ultimas noticias</h2>
+      <h2><?php echo $parametro['titulo'] ?></h2>
     </div>
     <hr>
     <div class="card-deck" style="margin-top: 30px;">
     <?php foreach($posts as $post) {  ?>
-            <div class="card">
+            <div class="card shadow">
                 <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $post['imgDestaque'] ?>" alt="Card image cap">
                 <div class="card-body">
                   <a href="noticias/<?php echo $post['slug'] ?>"><?php echo $post['titulo'] ?></a>

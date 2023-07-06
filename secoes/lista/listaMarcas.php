@@ -1,7 +1,8 @@
 <?php
 
 include_once(ROOT . '/sistema/database/marcas.php');
-$marcas = buscaMarcas();
+$parametros = json_decode($secaoPagina["parametros"], true);
+$marcas = buscaMarcasParceiras();
 ?>
 <style>
     a {
@@ -44,7 +45,7 @@ $marcas = buscaMarcas();
 
 <div class="container-fluid" style="margin-top: 10px;">
     <div class="row titulo">
-            <h2>Marcas</h2>
+            <h2><?php echo $parametros['titulo'] ?></h2>
         </div>
         <hr>
     

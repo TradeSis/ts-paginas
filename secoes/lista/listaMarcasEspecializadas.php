@@ -1,9 +1,8 @@
 <?php
-include_once(ROOT . '/sistema/database/eventos.php');
-$visitacoes = buscaEventosPodcasts();
 
 include_once(ROOT . '/sistema/database/marcas.php');
-$marcas = buscaMarcas();
+$parametros = json_decode($secaoPagina["parametros"], true);
+$marcas = buscaMarcasEspecializadas();
 ?>
 <style>
     a {
@@ -44,9 +43,9 @@ $marcas = buscaMarcas();
 </style>
 
 
-<div class="container-fluid" style="margin-top: 10px;">
+<div class="container-fluid" style="margin-top: 100px;">
     <div class="row titulo">
-            <h2>Podcasts</h2>
+            <h2><?php echo $parametros['titulo'] ?></h2>
         </div>
         <hr>
     
@@ -66,26 +65,3 @@ $marcas = buscaMarcas();
 </div>
 
 </div>
-
-
-<!-- <div class="container-fluid" style="margin-top: 10px;">
-    <div class="row titulo">
-            <h2>Visitações</h2>
-        </div>
-        <hr>
-    <div class="card-deck" style="margin-top: 30px;">
-        <?php foreach ($noticias as $noticia) {  ?>
-            <div class="card" style="width: 50px;">
-                <center>
-                    <p>data</p>
-                </center>
-                <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $noticia['imgNoticia'] ?>" alt="Card image cap">
-                <div class="card-body text-center">
-                    <h5 class="card-title" href="noticias/<?php echo $noticia['tituloNoticia'] ?>"><?php echo $noticia['tituloNoticia'] ?></h5>
-                    <p>local</p>
-                </div>
-
-            </div>
-        <?php } ?>
-    </div>
-</div> -->

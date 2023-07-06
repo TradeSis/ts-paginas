@@ -1,7 +1,7 @@
 <?php
 include_once(ROOT . '/sistema/database/eventos.php');
+$parametro = json_decode($secaoPagina["parametros"], true);
 $visitacoes = buscaVisitacaoEventos();
-//echo json_encode($eventos);
 ?>
 <style>
     a {
@@ -34,7 +34,7 @@ $visitacoes = buscaVisitacaoEventos();
 
 <div class="container-fluid" style="margin-top: 10px;">
     <div class="row titulo">
-            <h2>Visitações</h2>
+            <h2><?php echo $parametro['titulo'] ?></h2>
         </div>
         <hr>
     <div class="card-deck" style="margin-top: 30px;">

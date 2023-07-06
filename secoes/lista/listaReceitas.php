@@ -1,7 +1,7 @@
 <?php
     include_once(ROOT . '/sistema/database/receitas.php');
+    $parametro = json_decode($secaoPagina["parametros"], true);
     $receitas = buscaReceitas();
-   // echo json_encode($receitas);
 ?>
 <style>
   a {
@@ -28,9 +28,10 @@
   }
 </style>
 <div class="container-fluid">
-<div class="row titulo" style="margin-top: 30px;">
-      <h2>Receitas</h2>
+<div class="row titulo">
+      <h2><?php echo $parametro['titulo'] ?></h2>
     </div>
+    <hr>
  <div class="row">   
  <?php foreach ($receitas as $receita) {  ?>
     <div class="card-deck col-sm-4 mt-4">

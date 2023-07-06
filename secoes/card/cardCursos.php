@@ -1,5 +1,6 @@
 <?php
 include_once(ROOT . '/sistema/database/eventos.php');
+$parametros = json_decode($secaoPagina["parametros"], true);
 $eventos = buscaEventosCursos();
 ?>
 <style>
@@ -33,7 +34,7 @@ $eventos = buscaEventosCursos();
 </style>
 <div class="container-fluid" style="margin-top: 10px;">
     <div class="row titulo">
-            <h2>Cursos</h2>
+            <h2><?php echo $parametros['titulo'] ?></h2>
         </div>
         <hr>
     <div class="card-deck" style="margin-top: 30px;">
