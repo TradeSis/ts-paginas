@@ -11,6 +11,12 @@ $produtos = buscaCardProdutos();
   .carousel-control-next{
     margin-right: 30px;
   }
+
+  p{
+    color: #1B4D60;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+  }
 </style>
 
 

@@ -57,7 +57,8 @@ $marcas = buscaMarcasParceiras();
   <div class="col-sm-2" data-aos="fade-up" data-aos-delay="200">
     <div class="box text-center">
       <img src="<?php echo URLROOT ?>/img/<?php echo $marcas['imgMarca'] ?>" class="img-fluid" alt="">
-      <p><?php echo $marcas['nomeMarca'] ?></p>
+      
+      <a href="marcas/<?php echo $marcas['slug'] ?>"><p><?php echo $marcas['nomeMarca'] ?></p></a>
       
     </div>
   </div>

@@ -33,13 +33,12 @@ $eventos = buscaProximosEventos();
 </style>
 <div class="container-fluid" style="margin-top: 10px;">
     <div class="row titulo">
-            <h2><?php echo $parametros['titulo'] ?>1</h2>
+            <h2><?php echo $parametros['titulo'] ?></h2>
         </div>
         <hr>
-    <div class="card-deck " style="margin-top: 30px;">
+    <div class="card-deck" style="margin-top: 30px;">
         <?php foreach ($eventos as $evento) {  ?>
-            <div class="col-sm-4">
-            <div class="card ">
+            <div class="card">
                 <center>
                     <p><?php echo date('d/m/Y', strtotime($evento['dataEvento']))?></p>
                 </center>
@@ -50,8 +49,6 @@ $eventos = buscaProximosEventos();
                 </div>
 
             </div>
-            </div>
-           
         <?php } ?>
     </div>
 </div>

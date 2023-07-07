@@ -39,7 +39,7 @@
             <div class="card shadow">
                 <img class="card-img-top p-2" src="<?php echo URLROOT ?>/img/<?php echo $receita['imgReceita'] ?>" alt="Card image cap">
                 <div class="card-body">
-                    <a class="card-title" href="noticias/<?php echo $receita['nomeReceita'] ?>"><?php echo $receita['nomeReceita'] ?></a>
+                    <a class="card-title" href="receitas/<?php echo $receita['slug'] ?>"><?php echo $receita['nomeReceita'] ?></a>
                 </div>
                 <footer class="text-right" style="margin-top: -20px;">
                   <samp class="mr-3"><?php echo $receita['autorReceita'] ?></samp>
