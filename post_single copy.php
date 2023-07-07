@@ -16,6 +16,7 @@ foreach ($secoesPaginas as $secaoPagina){
 }
 
 $post = buscaSlug($slugSingle);
+echo json_encode($post);
 
 ?>
 
@@ -24,7 +25,7 @@ $post = buscaSlug($slugSingle);
  
 
   <main id="main">
-
+<?php echo $post['titulo'] ?>
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
       <div class="container">

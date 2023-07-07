@@ -29,7 +29,7 @@
    --color-icone: #fff;
    --color-sociaisIcons-primary: #1a1f24;
    --color-sociaisIcons-secundary: #ffffff;
-   --ts-tamanhoLogo: 70%;
+   --ts-tamanhoLogo: 200px;
   
   
   
@@ -119,9 +119,9 @@ header {
   background: var(--color-header-primary)
 }
 
-header .logo{
+/* header .logo{
   width: 80%;
-}
+} */
 
 header .container-header {
   display: flex;
@@ -148,13 +148,6 @@ header .container-header nav li a.menuHeader{
   text-decoration: none;
   margin-left: 50px;
 }
-
-/* header .container-header nav li a.active {
-  color: red;
-  font-weight: 600;
-  text-decoration: none;
-  margin-left: 15px;
-} */
 
 
 header .container-header .search-container {
@@ -271,8 +264,6 @@ header .container-header .mobile-menu samp{
 }
 
 .root .container-header a img{
-  width: 300;
-  height: 60;
   width: var(--ts-tamanhoLogo);
 }
 

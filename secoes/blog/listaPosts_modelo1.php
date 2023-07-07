@@ -13,7 +13,7 @@ if (isset($_GET['categoria'])) {
   $categoria = null;
 }
 $posts = buscaPosts(null, $titulo, $categoria);
-//echo json_encode(URLROOT);
+//echo json_encode($posts);
 
 ?>
 
@@ -27,7 +27,7 @@ $posts = buscaPosts(null, $titulo, $categoria);
     </div>
 
     <h2 class="title">
-      <a href="blog/<?php echo $post['slug'] ?>"><?php echo $post["titulo"] ?></a>
+      <a href="<?php echo $post['slug'] ?>"><?php echo $post["titulo"] ?></a>
     </h2>
 
     <div class="meta-top">
@@ -50,7 +50,7 @@ $posts = buscaPosts(null, $titulo, $categoria);
     </div>
 
     <div class="read-more mt-auto align-self-end">
-      <a href="blog/<?php echo $post['slug'] ?>">Ler mais</a>
+      <a href="<?php echo $post['slug'] ?>">Ler mais</a>
     </div>
   </article>
 </div>

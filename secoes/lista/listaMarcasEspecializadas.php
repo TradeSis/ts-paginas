@@ -2,7 +2,7 @@
 
 include_once(ROOT . '/sistema/database/marcas.php');
 $parametros = json_decode($secaoPagina["parametros"], true);
-$marcas = buscaMarcasParceiras();
+$marcas = buscaMarcasEspecializadas();
 ?>
 <style>
     a {
@@ -43,7 +43,7 @@ $marcas = buscaMarcasParceiras();
 </style>
 
 
-<div class="container-fluid" style="margin-top: 10px;">
+<div class="container-fluid" style="margin-top: 100px;">
     <div class="row titulo">
             <h2><?php echo $parametros['titulo'] ?></h2>
         </div>
@@ -57,8 +57,7 @@ $marcas = buscaMarcasParceiras();
   <div class="col-sm-2" data-aos="fade-up" data-aos-delay="200">
     <div class="box text-center">
       <img src="<?php echo URLROOT ?>/img/<?php echo $marcas['imgMarca'] ?>" class="img-fluid" alt="">
-      
-      <a href="marcas/<?php echo $marcas['slug'] ?>"><p><?php echo $marcas['nomeMarca'] ?></p></a>
+      <p><?php echo $marcas['nomeMarca'] ?></p>
       
     </div>
   </div>

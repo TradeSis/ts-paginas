@@ -1,7 +1,7 @@
 <?php
 include_once(ROOT . '/sistema/database/eventos.php');
 $parametros = json_decode($secaoPagina["parametros"], true);
-$eventos = buscaEventosCursos();
+$eventos = buscaProximosEventos();
 ?>
 <style>
     a {
@@ -30,7 +30,6 @@ $eventos = buscaEventosCursos();
     .card-deck .card{
         border: none;
     }
-  
 </style>
 <div class="container-fluid" style="margin-top: 10px;">
     <div class="row titulo">
@@ -41,7 +40,7 @@ $eventos = buscaEventosCursos();
         <?php foreach ($eventos as $evento) {  ?>
             <div class="card">
                 <center>
-                    <h5><?php echo date('d/m/Y', strtotime($evento['dataEvento']))?></h5>
+                    <p><?php echo date('d/m/Y', strtotime($evento['dataEvento']))?></p>
                 </center>
                 <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $evento['capaEvento'] ?>" alt="Card image cap">
                 <div class="card-body text-center">
@@ -53,3 +52,4 @@ $eventos = buscaEventosCursos();
         <?php } ?>
     </div>
 </div>
+
