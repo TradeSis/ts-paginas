@@ -4,26 +4,28 @@ $temas = buscaTemas($paginaDados['idTema']);
 $menus = json_decode($temas['menu'],true);
 $perfil = json_decode($temas['perfil'],true);
 ?>
-
 <style>
-  .navbar-brand img{
-    width: 180px;
+  #faixaDeCima i{
+    font-size: 20px;
   }
-  #div_data{
-    margin-left: 200px;
-  }
-  .containerFaixaDeCima{
-    width: 95vw;
-  }
+
+
+
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+#faixaDeCima .dataHeader p{
+  margin-top: -10px;
+}
 </style>
 
-
-<div class="containerFaixaDeCima" id="faixaDeCima">
+<div class="container-fluid" id="faixaDeCima">
   <div class="row">
+    <!-- <div class="col-sm-2"></div> -->
 
-    <div class="col-sm-4 mt-3 p-0">
-        <p id="div_data"></p>
-     
+    <div class="col-sm-4">
+      <a href="" class="dataHeader"><p>quarta-feira, 28 junho, 2023</p></a>
+      
     </div>
     <div class="col-sm-6 mt-3 p-0">
     <p><span class="typed-text"></span><span class="cursor">&nbsp;</span>_</p>
@@ -37,48 +39,48 @@ $perfil = json_decode($temas['perfil'],true);
    
    
 </div>
-
-
-<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #E2EBEB;">
-  <div class="container">
-
-  <a class="navbar-brand" href="<?php echo URLROOT?>"><img class="logo" src="<?php echo URLROOT ?>/img/<?php echo $parametro['logo']?>" alt="" ></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 120px">
-    <ul class="navbar-nav mr-auto">
-    <?php 
+<div class="root">
+  <header>
+    <div class="container container-header">
+    
+      <a href="<?php echo URLROOT?>"><img class="logo" src="<?php echo URLROOT ?>/img/<?php echo $parametro['logo']?>" alt="" ></a>
+      <nav>
+        <?php 
           foreach($menus as $menu){
         ?>
-          <li class="nav-item mr-4"><a href="<?php echo $menu['href']?>" class="nav-link"><?php echo $menu['menu']?></a></li>
+          <li><a href="<?php echo $menu['href']?>" class="menuHeader"><?php echo $menu['menu']?></a></li>
         <?php } ?>
-   
-   
-    </ul>
-   <!--  <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
-  </div>
-  </div>
-  
-</nav>
+        
+        
+      </nav>
+
+
+      <div class="mobile-menu">
+      <span class="material-symbols-outlined">
+menu
+</span>
+      </div>
+    </div>
+
+    
+  </header>
+
+</div>
+ 
+<div class="container-flex mobile-conteudo" style="text-align:center; background-color: #0C2D4C; ">
+    <div>
+        <?php 
+          foreach($menus as $menu){
+        ?>
+          <li><a href="<?php echo $menu['href']?>" class="active"><?php echo $menu['menu']?></a></li>
+        <?php } ?>
+   </div>
+
+</div>
 
 
 
-
-<script>
-// mostrar data
-const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
-const diaSemana = ["Domingo","Segunda-feira ", "Terça-feira ", "Quarta-feira ", "Quinta-feira ", "Sexta-feira ", "Sábado"];
-let data = new Date();
-let dataFormatada = ((diaSemana[(data.getDay())]  + "," + data.getDate() + " " + meses[(data.getMonth())] + " " + data.getFullYear()));
-
-div_data.innerHTML=dataFormatada
-// texto com efeito de maquina de escrever
-const typedTextSpan = document.querySelector(".typed-text");
+<script>const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
 const textArray = ["todas as marcas em um único lugar", "veja os eventos da semana"];

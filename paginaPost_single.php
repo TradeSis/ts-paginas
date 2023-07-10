@@ -26,7 +26,7 @@ foreach ($secoesPaginas as $secaoPagina) {
 
 
   <main id="main">
-    <div class="row ml-4 mt-3"><a href="../noticias" style="font-size: 30px;">
+    <div class="row ml-4 mt-3"><a href="../noticias" style="font-size: 25px; color: #050A30">
         << Noticias </a>
     </div>
     <!-- ======= Blog Section ======= -->

@@ -38,7 +38,6 @@ $posts = buscaPosts(null, $titulo, $categoria);
 
 
   <main id="main">
-NOVO BLOG
     <!-- ======= Blog Section ======= -->
     <section style="margin-top: -30px;">
       <div class="container-fluid" data-aos="fade-up">

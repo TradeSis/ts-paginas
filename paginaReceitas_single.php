@@ -26,7 +26,7 @@ foreach ($secoesPaginas as $secaoPagina) {
 
 
   <main id="main">
-  <div class="row ml-4 mt-3"><a href="../receitas" style="font-size: 30px;"> << Receitas </a></div>
+  <div class="row ml-4 mt-3"><a href="../receitas" style="font-size: 25px; color: #050A30"> << Receitas </a></div>
     <!-- ======= Blog Section ======= -->
     <section style="margin-top: -30px;">
       <div class="container-fluid" data-aos="fade-up">
