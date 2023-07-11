@@ -37,17 +37,21 @@ $visitacoes = buscaVisitacaoEventos();
             <h2><?php echo $parametro['titulo'] ?></h2>
         </div>
         <hr>
-    <div class="card-deck" style="margin-top: 30px;">
+       
+        <div class="card-deck" style="margin-top: 30px;">
         <?php foreach ($visitacoes as $visitacao) {  ?>
+            <div class="col-sm-4">
             <div class="card">
-                <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $visitacao['capaEvento'] ?>" alt="Card image cap">
+                <a href="eventos/<?php echo $visitacao['slug'] ?>"><img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $visitacao['capaEvento'] ?>" alt="Card image cap"></a>
                 <div class="card-body text-center">
-                    <h5 class="card-title" href="noticias/<?php echo $visitacao['nomeEvento'] ?>"><?php echo $visitacao['nomeEvento'] ?></h5>
+                    <a class="card-title" href="eventos/<?php echo $visitacao['slug'] ?>"><h5><?php echo $visitacao['nomeEvento'] ?></h5></a>
                     <p><?php echo $visitacao['localEvento'] ?></p>
                 </div>
-
+            </div>
             </div>
         <?php } ?>
     </div>
+        
+
 </div>
 

@@ -105,107 +105,10 @@
   }
 
   /* HeaderFaixatopo */
-.root {
-  display: flex;
-  flex-direction: column;
-
- /*  min-height: 100vh; */
-}
-
-header {
-  display: flex;
-  width: 100%;
-  height: 65px;
-  background: var(--color-header-primary)
-}
-
-/* header .logo{
-  width: 80%;
-} */
-
-header .container-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
- /*  height: 100%; */
-  padding: 0 2em;
-}
-
-header .container-header nav {
-  display: flex;
-  list-style-type: none;
-}
-
-header .container-header h2 {
-  color: #fff;
-}
-
-header .container-header nav li a.menuHeader{
-  color: var(--color-h1-primary);
-  opacity: 0.7;
-  font-weight: 500;
-  text-decoration: none;
-  margin-left: 50px;
-}
-
-
-header .container-header .search-container {
-  display: flex;
-}
-
-
-header .container-header .mobile-menu {
-  display: none;
-}
-
-header .container-header .mobile-menu samp{
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-  font-size: 35px;
-}
-
-@media (max-width: 768px) {
-  
-  header .container-header nav {
-    display: none;
-  }
-  
-   header .container-header .mobile-menu {
-    display: block;
-  }
-
- /*  header .logo{
-    width: 70%;
-  } */
-
-  #faixaDeCima {
-    display: none;
-  }
-  #faixaDeCima a{
-    display: none;
-  }
-
-  .row .textoCentro h1{
-    font-size: 40px;
-    }
-}
-
-@media (min-width: 768px) {
-  
-   header .container-header .mobile-menu {
-    display: none;
-  }
-  .mobile-conteudo .container-flex{
-  width: 50%;
-}
-}
 
 #faixaDeCima{
     background-color: #fff;
     height: 42px;
-    /* text-align: right; */
     justify-content: center;
   }
   #faixaDeCima a{
@@ -215,57 +118,17 @@ header .container-header .mobile-menu samp{
     padding-right: 30px;
     margin-left: 40px;
     font-size: 15px;
-    font-weight: 600;
+    /* font-weight: 600; */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-
-.menuHeder li a{
-  margin-top: 10px;
-}
-
-
-.mobile-conteudo{
-  display: none;
-
-}
-
-.mobile-conteudo span{
-  cursor: pointer;
-  font-size: 20px;
-}
-.mobile-menu span{
-  cursor: pointer;
-  font-size: 30px;
-  font-weight: 600;
-  color: var(--color-btn-text);
-}
-
-.mobile-conteudo.mostra{
-  display: block;
-  align-items: center;
-  text-align: center;
-  height: 30vh;
-  padding-top: 30px;
-}
-.mobile-conteudo.mostra a{
-  position: relative;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  color: var(--color-btn-text);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight:600;
-   cursor: pointer;
-
-}
-
-.root .container-header a img{
-  width: var(--ts-tamanhoLogo);
-}
+  @media only screen and (max-width: 600px) {
+    #faixaDeCima {
+      display: none;
+    }
+    .navbar-collapse li{
+      margin-left: -120px;
+    }
+  }
 
 .blog .sidebar .categories select {
   margin-top: 5px;

@@ -27,15 +27,16 @@ $visitacoes = buscaEventosPodcasts();
         margin-left: 5px;
     }
 
-    .card-deck .card{
+    .card-deck .card {
         border: none;
     }
-    .card-deck .cardPodcast{
-        /* background-color: red; */
+
+    .card-deck .cardPodcast {
         align-items: center;
     }
-    .card-deck .cardPodcast img{
-       
+
+    .card-deck .cardPodcast img {
+
         width: 150px;
         height: 150px;
     }
@@ -44,15 +45,17 @@ $visitacoes = buscaEventosPodcasts();
 
 <div class="container-fluid" style="margin-top: 10px;">
     <div class="row titulo">
-            <h2><?php echo $parametros['titulo'] ?></h2>
-        </div>
-        <hr>
+        <h2><?php echo $parametros['titulo'] ?></h2>
+    </div>
+    <hr>
     <div class="card-deck" style="margin-top: 30px;">
         <?php foreach ($visitacoes as $visitacao) {  ?>
             <div class="card cardPodcast">
-                <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $visitacao['capaEvento'] ?>" alt="Card image cap">
+                <a href="eventos/<?php echo $visitacao['slug'] ?>"><img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $visitacao['capaEvento'] ?>" alt="Card image cap"></a>
                 <div class="card-body text-center">
-                    <h5 class="card-title" href="noticias/<?php echo $visitacao['nomeEvento'] ?>"><?php echo $visitacao['nomeEvento'] ?></h5>
+                    <a href="eventos/<?php echo $visitacao['slug'] ?>">
+                        <h5 class="card-title"><?php echo $visitacao['nomeEvento'] ?></h5>
+                    </a>
                     <p><?php echo $visitacao['localEvento'] ?></p>
                 </div>
 
@@ -60,26 +63,3 @@ $visitacoes = buscaEventosPodcasts();
         <?php } ?>
     </div>
 </div>
-
-
-<!-- <div class="container-fluid" style="margin-top: 10px;">
-    <div class="row titulo">
-            <h2>Visitações</h2>
-        </div>
-        <hr>
-    <div class="card-deck" style="margin-top: 30px;">
-        <?php foreach ($noticias as $noticia) {  ?>
-            <div class="card" style="width: 50px;">
-                <center>
-                    <p>data</p>
-                </center>
-                <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $noticia['imgNoticia'] ?>" alt="Card image cap">
-                <div class="card-body text-center">
-                    <h5 class="card-title" href="noticias/<?php echo $noticia['tituloNoticia'] ?>"><?php echo $noticia['tituloNoticia'] ?></h5>
-                    <p>local</p>
-                </div>
-
-            </div>
-        <?php } ?>
-    </div>
-</div> -->

@@ -31,9 +31,10 @@ $eventos = buscaProximosEventos();
         border: none;
     }
 </style>
+
 <div class="container-fluid" style="margin-top: 10px;">
     <div class="row titulo">
-            <h2><?php echo $parametros['titulo'] ?>1</h2>
+            <h2><?php echo $parametros['titulo'] ?></h2>
         </div>
         <hr>
     <div class="card-deck " style="margin-top: 30px;">
@@ -43,9 +44,9 @@ $eventos = buscaProximosEventos();
                 <center>
                     <p><?php echo date('d/m/Y', strtotime($evento['dataEvento']))?></p>
                 </center>
-                <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $evento['capaEvento'] ?>" alt="Card image cap">
+                <a href="eventos/<?php echo $evento['slug'] ?>"><img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $evento['capaEvento'] ?>" alt="Card image cap"></a>
                 <div class="card-body text-center">
-                    <h5 class="card-title" href="noticias/<?php echo $evento['nomeEvento'] ?>"><?php echo $evento['nomeEvento'] ?></h5>
+                    <a href="eventos/<?php echo $evento['slug'] ?>"><h5 class="card-title"><?php echo $evento['nomeEvento'] ?></h5></a>
                     <p><?php echo $evento['localEvento'] ?></p>
                 </div>
 
