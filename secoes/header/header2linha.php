@@ -11,9 +11,27 @@ $perfil = json_decode($temas['perfil'],true);
   }
   #div_data{
     margin-left: 200px;
+    color: #1B4D60;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
   }
   .containerFaixaDeCima{
     width: 95vw;
+  }
+
+  .typed-text {
+    color: #1B4D60;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+
+  hr {
+    background-color: #3B3D42;
+    margin-top: -10px;
+    font-size: 14px;
   }
 </style>
 
@@ -29,9 +47,7 @@ $perfil = json_decode($temas['perfil'],true);
     <p><span class="typed-text"></span><span class="cursor">&nbsp;</span>_</p>
     </div>
     <div class="col-sm-2 mt-2">
-      <!-- <a href="https://www.instagram.com/<?php echo $perfil['instagram']?>"><i class="bi bi-instagram"></i></a> -->
       <a href="<?php echo $perfil['facebook']?>"><i class="bi bi-person-fill"></i></a> Lucas <i class="bi bi-box-arrow-right"></i>
-      
     </div>
   </div>
    
@@ -54,9 +70,8 @@ $perfil = json_decode($temas['perfil'],true);
         ?>
           <li class="nav-item mr-4"><a href="<?php echo $menu['href']?>" class="nav-link"><?php echo $menu['menu']?></a></li>
         <?php } ?>
-   
-   
-    </ul>
+
+      </ul>
    <!--  <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

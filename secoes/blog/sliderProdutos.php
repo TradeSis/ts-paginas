@@ -25,7 +25,7 @@ $produtos = buscaCardProdutos();
     <div class="carousel-inner pt-2">
     <center>
       <div class="carousel-item active" >
-        <img class="d-block w-50" style="border-radius: 15px" src="<?php echo URLROOT ?>/img/prod1_prod1.jpg" alt="First slide">
+        <img class="d-block w-50" height="200px" style="border-radius: 15px" src="<?php echo URLROOT ?>/img/prod1_prod1.jpg" alt="First slide">
         <center>
           <br>
           <hr style="width: 20vw;">
@@ -34,7 +34,7 @@ $produtos = buscaCardProdutos();
       </div>
       <?php foreach ($produtos as $produto) { ?>
         <div class="carousel-item">
-          <img class="d-block w-50" style="border-radius: 15px" src="<?php echo URLROOT ?>/img/<?php echo $produto['imgProduto'] ?>" alt="Second slide">
+          <img class="d-block w-50" height="200px" style="border-radius: 15px" src="<?php echo URLROOT ?>/img/<?php echo $produto['imgProduto'] ?>" alt="Second slide">
           <center>
             <br>
             <hr style="width: 20vw;">

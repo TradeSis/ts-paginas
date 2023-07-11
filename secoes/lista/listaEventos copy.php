@@ -1,7 +1,7 @@
 <?php
 include_once(ROOT . '/sistema/database/eventos.php');
 $parametros = json_decode($secaoPagina["parametros"], true);
-$cursos = buscaEventosCursos();
+$eventos = buscaProximosEventos();
 ?>
 <style>
     a {
@@ -30,26 +30,29 @@ $cursos = buscaEventosCursos();
     .card-deck .card{
         border: none;
     }
-  
 </style>
 <div class="container-fluid" style="margin-top: 10px;">
     <div class="row titulo">
-            <h2><?php echo $parametros['titulo'] ?></h2>
+            <h2><?php echo $parametros['titulo'] ?>1</h2>
         </div>
         <hr>
-    <div class="card-deck" style="margin-top: 30px;">
-        <?php foreach ($cursos as $curso) {  ?>
-            <div class="card">
+    <div class="card-deck " style="margin-top: 30px;">
+        <?php foreach ($eventos as $evento) {  ?>
+            <div class="col-sm-4">
+            <div class="card ">
                 <center>
-                    <h5><?php echo date('d/m/Y', strtotime($curso['dataEvento']))?></h5>
+                    <p><?php echo date('d/m/Y', strtotime($evento['dataEvento']))?></p>
                 </center>
-                <a href="eventos/<?php echo $curso['slug'] ?>"><img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $curso['capaEvento'] ?>" alt="Card image cap"></a>
+                <img class="card-img-top" src="<?php echo URLROOT ?>/img/<?php echo $evento['capaEvento'] ?>" alt="Card image cap">
                 <div class="card-body text-center">
-                    <a href="eventos/<?php echo $curso['slug'] ?>"><h5 class="card-title"><?php echo $curso['nomeEvento'] ?></h5></a>
-                    <p><?php echo $curso['localEvento'] ?></p>
+                    <h5 class="card-title" href="noticias/<?php echo $evento['nomeEvento'] ?>"><?php echo $evento['nomeEvento'] ?></h5>
+                    <p><?php echo $evento['localEvento'] ?></p>
                 </div>
 
             </div>
+            </div>
+           
         <?php } ?>
     </div>
 </div>
+
